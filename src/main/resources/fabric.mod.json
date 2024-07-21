@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
+  "id": "color",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This mod aims to help new BTA modders.",
+  "name": "World of Color",
+  "description": "Remaking the 1.12 release update of minecraft in BTA!",
   "authors": [
-    "Turnip Labs"
+    "LukeisStuff"
   ],
   "contact": {
     "homepage": "",
@@ -19,24 +19,23 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-			"turniplabs.examplemod.ExampleMod"
+			"luke.color.ColorMod"
     ],
 		"beforeGameStart": [
-			"turniplabs.examplemod.ExampleMod"
+			"luke.color.ColorMod"
 		],
 		"afterGameStart": [
-			"turniplabs.examplemod.ExampleMod"
+			"luke.color.ColorMod"
 		],
 		"recipesReady": [
-			"turniplabs.examplemod.ExampleMod"
+			"luke.color.ColorMod"
 		]
 	},
   "mixins": [
-      "examplemod.mixins.json"
+    "color.mixins.json"
   ],
 
   "depends": {
-		"minecraft": "~7.1",
     "fabricloader": ">=0.15.5"
   },
   "suggests": {
