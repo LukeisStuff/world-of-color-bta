@@ -14,19 +14,13 @@ public class BlockModelConcretePainted<T extends Block> extends BlockModelStanda
 		super(block);
 	}
 
-	@Override
-	public IconCoordinate getBlockOverbrightTextureFromSideAndMeta(Side side, int data) {
-		return getBlockTextureFromSideAndMetadata(side, data);
-	}
-
-	@Override
 	public IconCoordinate getBlockTextureFromSideAndMetadata(Side side, int data) {
 		return texCoords[data & 15];
 	}
 
 	static {
 		for(int i = 0; i < 16; ++i) {
-			texCoords[i] = TextureRegistry.getTexture("bonusblocks:block/concrete_" + ItemDye.dyeColors[15 - i]);
+			texCoords[i] = TextureRegistry.getTexture("color:block/concrete_" + ItemDye.dyeColors[15 - i]);
 		}
 
 	}
