@@ -17,18 +17,24 @@ public class ColorConfig {
 	public static TomlConfigHandler cfg;
 
 	private static int blockIDs = 11200;
+	private static int itemIDs = 20000;
 
 	static {
 		properties.addCategory("World of Color")
 			.addEntry("cfgVersion", 5);
 
 		properties.addCategory("Block IDs");
-		properties.addEntry("Block IDs.startingID", 11200);
-
+		properties.addEntry("Block IDs.startingID", blockIDs);
+		properties.addCategory("Item IDs");
+		properties.addEntry("Item IDs.startingID", itemIDs);
 
 		List<Field> blockFields = Arrays.stream(ColorBlocks.class.getDeclaredFields()).filter((F)-> Block.class.isAssignableFrom(F.getType())).collect(Collectors.toList());
 		for (Field blockField : blockFields) {
 			properties.addEntry("Block IDs." + blockField.getName(), blockIDs++);
+		}
+		List<Field> itemFields = Arrays.stream(ColorItems.class.getDeclaredFields()).filter((F)-> Item.class.isAssignableFrom(F.getType())).collect(Collectors.toList());
+		for (Field itemField : itemFields) {
+			properties.addEntry("Item IDs." + itemField.getName(), itemIDs++);
 		}
 
 		cfg = new TomlConfigHandler(updater, ColorMod.MOD_ID, properties);

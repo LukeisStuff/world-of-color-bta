@@ -1,4 +1,4 @@
-package luke.color;
+package luke.color.block;
 
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.entity.TileEntity;

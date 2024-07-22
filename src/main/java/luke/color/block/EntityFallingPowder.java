@@ -1,6 +1,8 @@
-package luke.color;
+package luke.color.block;
 
 import com.mojang.nbt.CompoundTag;
+import luke.color.ColorBlocks;
+import luke.color.block.BlockPowder;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.util.helper.Side;

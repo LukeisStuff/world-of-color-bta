@@ -1,5 +1,6 @@
-package luke.color;
+package luke.color.block;
 
+import luke.color.ColorBlocks;
 import net.minecraft.core.block.BlockSand;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
