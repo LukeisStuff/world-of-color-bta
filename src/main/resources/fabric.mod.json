@@ -28,7 +28,7 @@
 			"luke.color.ColorMod"
 		],
 		"recipesReady": [
-			"luke.color.ColorMod"
+			"luke.color.ColorRecipes"
 		]
 	},
   "mixins": [

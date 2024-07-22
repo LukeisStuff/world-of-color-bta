@@ -7,6 +7,8 @@ import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.World;
 
+import java.util.Random;
+
 public class BlockPowder extends BlockSand {
 
 
@@ -22,12 +24,30 @@ public class BlockPowder extends BlockSand {
 		return new ItemStack[]{new ItemStack(this, 1, meta)};
 	}
 
-	public static int func_21034_c(int i) {
-		return ~i & 15;
+	public void updateTick(World world, int x, int y, int z, Random rand) {
+		this.tryToFall(world, x, y, z);
 	}
 
-	public static int getMetadataForColour(int i) {
-		return ~i & 15;
+	private void tryToFall(World world, int i, int j, int k) {
+		if (canFallBelow(world, i, j - 1, k) && j >= 0) {
+			byte byte0 = 32;
+			int meta = world.getBlockMetadata(i, j, k);
+			if (!fallInstantly && world.areBlocksLoaded(i - byte0, j - byte0, k - byte0, i + byte0, j + byte0, k + byte0)) {
+				EntityFallingPowder entityfallingpowder = new EntityFallingPowder(world, (float)i + 0.5F, (float)j + 0.5F, (float)k + 0.5F, this.id, meta);
+				world.entityJoinedWorld(entityfallingpowder);
+			} else {
+				world.setBlockAndMetadataWithNotify(i, j, k, 0, meta);
+
+				while(canFallBelow(world, i, j - 1, k) && j > 0) {
+					--j;
+				}
+
+				if (j > 0) {
+					world.setBlockAndMetadataWithNotify(i, j, k, this.id, meta);
+				}
+			}
+		}
+
 	}
 
 	public void onBlockAdded(World world, int x, int y, int z) {
