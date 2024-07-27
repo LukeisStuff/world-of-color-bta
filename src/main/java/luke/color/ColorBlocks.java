@@ -29,36 +29,36 @@ public class ColorBlocks {
 	public static Block concrete;
 	public static Block concretePowder;
 
+	public static Block bedWhite;
 	public static Block bedOrange;
+	public static Block bedMagenta;
+	public static Block bedLightblue;
 	public static Block bedYellow;
 	public static Block bedLime;
-	public static Block bedGreen;
-	public static Block bedCyan;
-	public static Block bedLightblue;
-	public static Block bedBlue;
-	public static Block bedPurple;
-	public static Block bedMagenta;
 	public static Block bedPink;
-	public static Block bedBrown;
-	public static Block bedWhite;
-	public static Block bedSilver;
 	public static Block bedGray;
+	public static Block bedSilver;
+	public static Block bedCyan;
+	public static Block bedPurple;
+	public static Block bedBlue;
+	public static Block bedBrown;
+	public static Block bedGreen;
 	public static Block bedBlack;
 
+	public static Block seatWhite;
 	public static Block seatOrange;
+	public static Block seatMagenta;
+	public static Block seatLightblue;
 	public static Block seatYellow;
 	public static Block seatLime;
-	public static Block seatGreen;
-	public static Block seatCyan;
-	public static Block seatLightblue;
-	public static Block seatBlue;
-	public static Block seatPurple;
-	public static Block seatMagenta;
 	public static Block seatPink;
-	public static Block seatBrown;
-	public static Block seatWhite;
-	public static Block seatSilver;
 	public static Block seatGray;
+	public static Block seatSilver;
+	public static Block seatCyan;
+	public static Block seatPurple;
+	public static Block seatBlue;
+	public static Block seatBrown;
+	public static Block seatGreen;
 	public static Block seatBlack;
 
 
@@ -228,15 +228,9 @@ public class ColorBlocks {
 			});
 
 
-
-
-
-
-
-
-
+		
 		seatOrange = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_orange_top", "minecraft:block/planks_oak", "color:block/bed_orange_foot_front"))
+			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_orange_top", "minecraft:block/planks_oak", "color:block/bed/bed_orange_foot_front"))
 			.build(new BlockSeat("seat.orange", blockID("seatOrange")) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatOrange)};
@@ -244,7 +238,7 @@ public class ColorBlocks {
 			});
 
 		seatYellow = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_yellow_top", "minecraft:block/planks_oak", "color:block/bed_yellow_foot_front"))
+			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_yellow_top", "minecraft:block/planks_oak", "color:block/bed/bed_yellow_foot_front"))
 			.build(new BlockSeat("seat.yellow", blockID("seatYellow")) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatYellow)};
@@ -252,7 +246,7 @@ public class ColorBlocks {
 			});
 
 		seatLime = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_lime_top", "minecraft:block/planks_oak", "color:block/bed_lime_foot_front"))
+			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_lime_top", "minecraft:block/planks_oak", "color:block/bed/bed_lime_foot_front"))
 			.build(new BlockSeat("seat.lime", blockID("seatLime")) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatLime)};
@@ -260,7 +254,7 @@ public class ColorBlocks {
 			});
 
 		seatGreen = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_green_top", "minecraft:block/planks_oak", "color:block/bed_green_foot_front"))
+			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_green_top", "minecraft:block/planks_oak", "color:block/bed/bed_green_foot_front"))
 			.build(new BlockSeat("seat.green", blockID("seatGreen")) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatGreen)};
@@ -268,7 +262,7 @@ public class ColorBlocks {
 			});
 
 		seatCyan = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_cyan_top", "minecraft:block/planks_oak", "color:block/bed_cyan_foot_front"))
+			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_cyan_top", "minecraft:block/planks_oak", "color:block/bed/bed_cyan_foot_front"))
 			.build(new BlockSeat("seat.cyan", blockID("seatCyan")) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatCyan)};
@@ -276,7 +270,7 @@ public class ColorBlocks {
 			});
 
 		seatLightblue = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_lightblue_top", "minecraft:block/planks_oak", "color:block/bed_lightblue_foot_front"))
+			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_lightblue_top", "minecraft:block/planks_oak", "color:block/bed/bed_lightblue_foot_front"))
 			.build(new BlockSeat("seat.lightblue", blockID("seatLightblue")) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatLightblue)};
@@ -284,7 +278,7 @@ public class ColorBlocks {
 			});
 
 		seatBlue = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_blue_top", "minecraft:block/planks_oak", "color:block/bed_blue_foot_front"))
+			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_blue_top", "minecraft:block/planks_oak", "color:block/bed/bed_blue_foot_front"))
 			.build(new BlockSeat("seat.blue", blockID("seatBlue")) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatBlue)};
@@ -292,7 +286,7 @@ public class ColorBlocks {
 			});
 
 		seatPurple = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_purple_top", "minecraft:block/planks_oak", "color:block/bed_purple_foot_front"))
+			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_purple_top", "minecraft:block/planks_oak", "color:block/bed/bed_purple_foot_front"))
 			.build(new BlockSeat("seat.purple", blockID("seatPurple")) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatPurple)};
@@ -300,7 +294,7 @@ public class ColorBlocks {
 			});
 
 		seatMagenta = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_magenta_top", "minecraft:block/planks_oak", "color:block/bed_magenta_foot_front"))
+			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_magenta_top", "minecraft:block/planks_oak", "color:block/bed/bed_magenta_foot_front"))
 			.build(new BlockSeat("seat.magenta", blockID("seatMagenta")) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatMagenta)};
@@ -308,7 +302,7 @@ public class ColorBlocks {
 			});
 
 		seatPink = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_pink_top", "minecraft:block/planks_oak", "color:block/bed_pink_foot_front"))
+			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_pink_top", "minecraft:block/planks_oak", "color:block/bed/bed_pink_foot_front"))
 			.build(new BlockSeat("seat.pink", blockID("seatPink")) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatPink)};
@@ -316,7 +310,7 @@ public class ColorBlocks {
 			});
 
 		seatBrown = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_brown_top", "minecraft:block/planks_oak", "color:block/bed_brown_foot_front"))
+			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_brown_top", "minecraft:block/planks_oak", "color:block/bed/bed_brown_foot_front"))
 			.build(new BlockSeat("seat.brown", blockID("seatBrown")) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatBrown)};
@@ -324,7 +318,7 @@ public class ColorBlocks {
 			});
 
 		seatWhite = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_white_top", "minecraft:block/planks_oak", "color:block/bed_white_foot_front"))
+			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_white_top", "minecraft:block/planks_oak", "color:block/bed/bed_white_foot_front"))
 			.build(new BlockSeat("seat.white", blockID("seatWhite")) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatWhite)};
@@ -332,7 +326,7 @@ public class ColorBlocks {
 			});
 
 		seatSilver = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_silver_top", "minecraft:block/planks_oak", "color:block/bed_silver_foot_front"))
+			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_silver_top", "minecraft:block/planks_oak", "color:block/bed/bed_silver_foot_front"))
 			.build(new BlockSeat("seat.silver", blockID("seatSilver")) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatSilver)};
@@ -340,7 +334,7 @@ public class ColorBlocks {
 			});
 
 		seatGray = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_gray_top", "minecraft:block/planks_oak", "color:block/bed_gray_foot_front"))
+			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_gray_top", "minecraft:block/planks_oak", "color:block/bed/bed_gray_foot_front"))
 			.build(new BlockSeat("seat.gray", blockID("seatGray")) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatGray)};
@@ -348,7 +342,7 @@ public class ColorBlocks {
 			});
 
 		seatBlack = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_black_top", "minecraft:block/planks_oak", "color:block/bed_black_foot_front"))
+			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_black_top", "minecraft:block/planks_oak", "color:block/bed/bed_black_foot_front"))
 			.build(new BlockSeat("seat.black", blockID("seatBlack")) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatBlack)};

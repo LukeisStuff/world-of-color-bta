@@ -13,36 +13,36 @@ public class ColorItems {
 		return ColorConfig.cfg.getInt("Item IDs." + blockName);
 	}
 
+	public static Item bedWhite;
 	public static Item bedOrange;
+	public static Item bedMagenta;
+	public static Item bedLightblue;
 	public static Item bedYellow;
 	public static Item bedLime;
-	public static Item bedGreen;
-	public static Item bedCyan;
-	public static Item bedLightblue;
-	public static Item bedBlue;
-	public static Item bedPurple;
-	public static Item bedMagenta;
 	public static Item bedPink;
-	public static Item bedBrown;
-	public static Item bedWhite;
-	public static Item bedSilver;
 	public static Item bedGray;
+	public static Item bedSilver;
+	public static Item bedCyan;
+	public static Item bedPurple;
+	public static Item bedBlue;
+	public static Item bedBrown;
+	public static Item bedGreen;
 	public static Item bedBlack;
 
+	public static Item seatWhite;
 	public static Item seatOrange;
+	public static Item seatMagenta;
+	public static Item seatLightblue;
 	public static Item seatYellow;
 	public static Item seatLime;
-	public static Item seatGreen;
-	public static Item seatCyan;
-	public static Item seatLightblue;
-	public static Item seatBlue;
-	public static Item seatPurple;
-	public static Item seatMagenta;
 	public static Item seatPink;
-	public static Item seatBrown;
-	public static Item seatWhite;
-	public static Item seatSilver;
 	public static Item seatGray;
+	public static Item seatSilver;
+	public static Item seatCyan;
+	public static Item seatPurple;
+	public static Item seatBlue;
+	public static Item seatBrown;
+	public static Item seatGreen;
 	public static Item seatBlack;
 
 	public void initilizeItems() {
