@@ -74,11 +74,6 @@ public class ColorBlocks {
 	}
 
 	public void initializeBlocks() {
-		BlockBuilder stone = new BlockBuilder(MOD_ID)
-			.setBlockSound(new BlockSound("step.stone", "step.stone", 1.0f, 1.0f))
-			.setHardness(1.5f)
-			.setResistance(10.0f)
-			.setTags(BlockTags.MINEABLE_BY_PICKAXE);
 
 		BlockBuilder bed = new BlockBuilder(MOD_ID)
 			.setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
@@ -88,7 +83,7 @@ public class ColorBlocks {
 			.setVisualUpdateOnMetadata()
 			.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU);
 
-		concrete = stone
+		concrete = new BlockBuilder(MOD_ID)
 			.setHardness(5.0f)
 			.setResistance(25.0f)
 			.setBlockModel(BlockModelConcretePainted::new)
@@ -228,7 +223,7 @@ public class ColorBlocks {
 			});
 
 
-		
+
 		seatOrange = bed
 			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_orange_top", "minecraft:block/planks_oak", "color:block/bed/bed_orange_foot_front"))
 			.build(new BlockSeat("seat.orange", blockID("seatOrange")) {

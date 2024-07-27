@@ -17,10 +17,6 @@ public class BlockPowder extends BlockSand {
 		super(key, id);
 	}
 
-	public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
-			this.onBlockAdded(world, x, y, z);
-		}
-
 	public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 		return new ItemStack[]{new ItemStack(this, 1, meta)};
 	}
@@ -37,7 +33,7 @@ public class BlockPowder extends BlockSand {
 				EntityFallingPowder entityfallingpowder = new EntityFallingPowder(world, (float)i + 0.5F, (float)j + 0.5F, (float)k + 0.5F, this.id, meta);
 				world.entityJoinedWorld(entityfallingpowder);
 			} else {
-				world.setBlockAndMetadataWithNotify(i, j, k, 0, meta);
+				world.setBlockAndMetadataWithNotify(i, j, k, this.id, meta);
 
 				while(canFallBelow(world, i, j - 1, k) && j > 0) {
 					--j;
@@ -52,7 +48,7 @@ public class BlockPowder extends BlockSand {
 	}
 
 	public void onBlockAdded(World world, int x, int y, int z) {
-		super.onBlockAdded(world, x, y, z);
+		world.scheduleBlockUpdate(x, y, z, this.id, this.tickRate());
 		if (world.getBlockMaterial(x, y, z - 1) == Material.water || world.getBlockMaterial(x, y, z + 1) == Material.water || world.getBlockMaterial(x - 1, y, z) == Material.water || world.getBlockMaterial(x + 1, y, z) == Material.water || world.getBlockMaterial(x, y + 1, z) == Material.water) {
 			world.setBlockAndMetadataWithNotify(x, y, z, ColorBlocks.concrete.id, world.getBlockMetadata(x, y, z));
 		}

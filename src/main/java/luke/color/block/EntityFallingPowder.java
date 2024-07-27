@@ -2,15 +2,14 @@ package luke.color.block;
 
 import com.mojang.nbt.CompoundTag;
 import luke.color.ColorBlocks;
-import luke.color.block.BlockPowder;
 import net.minecraft.core.entity.Entity;
+import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 
 public class EntityFallingPowder extends Entity {
 	public int blockID;
-	public int metaID;
 	public int fallTime;
 	public boolean hasRemovedBlock = false;
 
@@ -24,7 +23,6 @@ public class EntityFallingPowder extends Entity {
 		super(world);
 		this.fallTime = 0;
 		this.blockID = i;
-		this.metaID = k;
 		this.blocksBuilding = true;
 		this.setSize(0.98F, 0.98F);
 		this.heightOffset = this.bbHeight / 2.0F;
@@ -49,7 +47,7 @@ public class EntityFallingPowder extends Entity {
 	}
 
 	public void tick() {
-		metaID = world.getBlockMetadata((int) this.x, (int) this.y, (int) this.z);
+		int metaID = world.getBlockMetadata((int) this.x, (int) this.y, (int) this.z);
 		if (this.blockID == 0) {
 			this.remove();
 		} else {
@@ -66,7 +64,7 @@ public class EntityFallingPowder extends Entity {
 			int j = MathHelper.floor_double(this.y);
 			int k = MathHelper.floor_double(this.z);
 			if (this.world.getBlockId(i, j, k) == this.blockID) {
-				this.world.setBlockAndMetadataWithNotify(i, j, k, 0, metaID);
+				this.world.setBlockWithNotify(i, j, k, 0);
 				this.hasRemovedBlock = true;
 			}
 
@@ -76,11 +74,11 @@ public class EntityFallingPowder extends Entity {
 				this.yd *= -0.5;
 				this.remove();
 				if ((!this.world.canBlockBePlacedAt(this.blockID, i, j, k, true, Side.TOP) || BlockPowder.canFallBelow(this.world, i, j - 1, k) || !this.world.setBlockAndMetadataWithNotify(i, j, k, this.blockID, metaID)) && !this.world.isClientSide && this.hasRemovedBlock) {
-					this.spawnAtLocation(this.blockID, 1);
+					this.spawnAtLocation(new ItemStack(this.blockID, 1, metaID), 0);
 				}
 			} else if (this.fallTime > 100 && !this.world.isClientSide) {
 				if (this.hasRemovedBlock) {
-					this.spawnAtLocation(this.blockID, 1);
+					this.spawnAtLocation(new ItemStack(this.blockID, 1, metaID), 0);
 				}
 
 				this.remove();
