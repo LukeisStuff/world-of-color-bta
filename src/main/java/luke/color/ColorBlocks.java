@@ -4,6 +4,7 @@ import luke.color.block.BlockConcrete;
 import luke.color.block.BlockPowder;
 import luke.color.blockmodel.*;
 import net.minecraft.client.render.block.model.BlockModelSeat;
+import net.minecraft.client.render.block.model.BlockModelStandard;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockBed;
 import net.minecraft.core.block.BlockSeat;
@@ -19,7 +20,6 @@ import turniplabs.halplibe.helper.BlockBuilder;
 import turniplabs.halplibe.helper.CreativeHelper;
 
 import static luke.color.ColorMod.MOD_ID;
-import static net.minecraft.core.block.Block.trommelIdle;
 
 public class ColorBlocks {
 	private int blockID(String blockName) {
@@ -27,7 +27,23 @@ public class ColorBlocks {
 	}
 
 	public static Block concrete;
-	public static Block concretePowder;
+
+	public static Block concretePowderWhite;
+	public static Block concretePowderOrange;
+	public static Block concretePowderMagenta;
+	public static Block concretePowderLightblue;
+	public static Block concretePowderYellow;
+	public static Block concretePowderLime;
+	public static Block concretePowderPink;
+	public static Block concretePowderGray;
+	public static Block concretePowderSilver;
+	public static Block concretePowderCyan;
+	public static Block concretePowderPurple;
+	public static Block concretePowderBlue;
+	public static Block concretePowderBrown;
+	public static Block concretePowderGreen;
+	public static Block concretePowderRed;
+	public static Block concretePowderBlack;
 
 	public static Block bedWhite;
 	public static Block bedOrange;
@@ -65,15 +81,18 @@ public class ColorBlocks {
 	public void initializeBlockDetails() {
 
 		for (int color = 1; color < 17; color++) {
-			CreativeHelper.setParent(concrete, color - 1, trommelIdle, 0);
+			CreativeHelper.setParent(concrete, color - 1, concretePowderBlack, 0);
 		}
 
-		for (int color = 1; color < 17; color++) {
-			CreativeHelper.setParent(concretePowder, color - 1, trommelIdle, 0);
-		}
 	}
 
 	public void initializeBlocks() {
+
+		BlockBuilder powder = new BlockBuilder(MOD_ID)
+			.setBlockSound(new BlockSound("step.sand", "step.sand", 1.0f, 0.8f))
+			.setHardness(0.5f)
+			.setResistance(0.5f)
+			.setTags(BlockTags.MINEABLE_BY_SHOVEL);
 
 		BlockBuilder bed = new BlockBuilder(MOD_ID)
 			.setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
@@ -91,15 +110,69 @@ public class ColorBlocks {
 			.setItemBlock(block -> new ItemBlockPainted(block, false))
 			.build(new BlockConcrete("concrete", blockID("concrete"), Material.stone));
 
-		concretePowder = new BlockBuilder(MOD_ID)
-			.setBlockSound(new BlockSound("step.sand", "step.sand", 1.0f, 0.8f))
-			.setHardness(0.5f)
-			.setResistance(0.5f)
-			.setBlockModel(BlockModelPowderPainted::new)
-			.setTags(BlockTags.MINEABLE_BY_SHOVEL)
-			.setItemBlock(block -> new ItemBlockPainted(block, false))
-			.build(new BlockPowder("concrete.powder", blockID("concretePowder")));
+		concretePowderWhite = powder
+			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_white"))
+			.build(new BlockPowder("concrete.powder.white", blockID("concretePowderWhite"),0));
 
+		concretePowderOrange = powder
+			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_orange"))
+			.build(new BlockPowder("concrete.powder.orange", blockID("concretePowderOrange"),1));
+
+		concretePowderMagenta = powder
+			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_magenta"))
+			.build(new BlockPowder("concrete.powder.magenta", blockID("concretePowderMagenta"),2));
+
+		concretePowderLightblue = powder
+			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_lightblue"))
+			.build(new BlockPowder("concrete.powder.lightblue", blockID("concretePowderLightblue"),3));
+
+		concretePowderYellow = powder
+			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_yellow"))
+			.build(new BlockPowder("concrete.powder.yellow", blockID("concretePowderYellow"),4));
+
+		concretePowderLime = powder
+			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_lime"))
+			.build(new BlockPowder("concrete.powder.lime", blockID("concretePowderLime"),5));
+
+		concretePowderPink = powder
+			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_pink"))
+			.build(new BlockPowder("concrete.powder.pink", blockID("concretePowderPink"),6));
+
+		concretePowderGray = powder
+			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_gray"))
+			.build(new BlockPowder("concrete.powder.gray", blockID("concretePowderGray"),7));
+
+		concretePowderSilver = powder
+			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_silver"))
+			.build(new BlockPowder("concrete.powder.silver", blockID("concretePowderSilver"),8));
+
+		concretePowderCyan = powder
+			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_cyan"))
+			.build(new BlockPowder("concrete.powder.cyan", blockID("concretePowderCyan"),9));
+
+		concretePowderPurple = powder
+			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_purple"))
+			.build(new BlockPowder("concrete.powder.purple", blockID("concretePowderPurple"),10));
+
+		concretePowderBlue = powder
+			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_blue"))
+			.build(new BlockPowder("concrete.powder.blue", blockID("concretePowderBlue"),11));
+
+		concretePowderBrown = powder
+			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_brown"))
+			.build(new BlockPowder("concrete.powder.brown", blockID("concretePowderBrown"),12));
+
+		concretePowderGreen = powder
+			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_green"))
+			.build(new BlockPowder("concrete.powder.green", blockID("concretePowderGreen"),13));
+
+		concretePowderRed = powder
+			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_red"))
+			.build(new BlockPowder("concrete.powder.red", blockID("concretePowderRed"),14));
+
+		concretePowderBlack = powder
+			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_black"))
+			.build(new BlockPowder("concrete.powder.black", blockID("concretePowderBlack"),15));
 
 
 		bedOrange = bed
