@@ -13,25 +13,24 @@ public class ColorRecipes implements RecipeEntrypoint {
 
 	public void initializeRecipes() {
 
-		for (int color = 0; color < 16; color++) {
+
 			RecipeBuilderShaped templatePowder = new RecipeBuilderShaped(MOD_ID, "DSS", "SSG", "GGG");
-			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 0))).addInput('S', (Block.sand)).addInput('S', (Block.gravel)).create("concrete_powder_white", new ItemStack(ColorBlocks.concretePowderWhite, 8));
-			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 1))).addInput('S', (Block.sand)).addInput('S', (Block.gravel)).create("concrete_powder_orange", new ItemStack(ColorBlocks.concretePowderOrange, 8));
-			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 2))).addInput('S', (Block.sand)).addInput('S', (Block.gravel)).create("concrete_powder_magenta", new ItemStack(ColorBlocks.concretePowderMagenta, 8));
-			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 3))).addInput('S', (Block.sand)).addInput('S', (Block.gravel)).create("concrete_powder_lightblue", new ItemStack(ColorBlocks.concretePowderLightblue, 8));
-			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 4))).addInput('S', (Block.sand)).addInput('S', (Block.gravel)).create("concrete_powder_yellow", new ItemStack(ColorBlocks.concretePowderYellow, 8));
-			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 5))).addInput('S', (Block.sand)).addInput('S', (Block.gravel)).create("concrete_powder_lime", new ItemStack(ColorBlocks.concretePowderLime, 8));
-			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 6))).addInput('S', (Block.sand)).addInput('S', (Block.gravel)).create("concrete_powder_pink", new ItemStack(ColorBlocks.concretePowderPink, 8));
-			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 7))).addInput('S', (Block.sand)).addInput('S', (Block.gravel)).create("concrete_powder_gray", new ItemStack(ColorBlocks.concretePowderGray, 8));
-			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 8))).addInput('S', (Block.sand)).addInput('S', (Block.gravel)).create("concrete_powder_silver", new ItemStack(ColorBlocks.concretePowderSilver, 8));
-			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 9))).addInput('S', (Block.sand)).addInput('S', (Block.gravel)).create("concrete_powder_cyan", new ItemStack(ColorBlocks.concretePowderCyan, 8));
-			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 10))).addInput('S', (Block.sand)).addInput('S', (Block.gravel)).create("concrete_powder_purple", new ItemStack(ColorBlocks.concretePowderPurple, 8));
-			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 11))).addInput('S', (Block.sand)).addInput('S', (Block.gravel)).create("concrete_powder_blue", new ItemStack(ColorBlocks.concretePowderBlue, 8));
-			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 12))).addInput('S', (Block.sand)).addInput('S', (Block.gravel)).create("concrete_powder_brown", new ItemStack(ColorBlocks.concretePowderBrown, 8));
-			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 13))).addInput('S', (Block.sand)).addInput('S', (Block.gravel)).create("concrete_powder_green", new ItemStack(ColorBlocks.concretePowderGreen, 8));
-			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 14))).addInput('S', (Block.sand)).addInput('S', (Block.gravel)).create("concrete_powder_red", new ItemStack(ColorBlocks.concretePowderRed, 8));
-			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 15))).addInput('S', (Block.sand)).addInput('S', (Block.gravel)).create("concrete_powder_black", new ItemStack(ColorBlocks.concretePowderBlack, 8));
-		}
+			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 0))).addInput('S', (Block.sand)).addInput('G', (Block.gravel)).create("concrete_powder_white", new ItemStack(ColorBlocks.concretePowderWhite, 8));
+			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 1))).addInput('S', (Block.sand)).addInput('G', (Block.gravel)).create("concrete_powder_orange", new ItemStack(ColorBlocks.concretePowderOrange, 8));
+			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 2))).addInput('S', (Block.sand)).addInput('G', (Block.gravel)).create("concrete_powder_magenta", new ItemStack(ColorBlocks.concretePowderMagenta, 8));
+			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 3))).addInput('S', (Block.sand)).addInput('G', (Block.gravel)).create("concrete_powder_lightblue", new ItemStack(ColorBlocks.concretePowderLightblue, 8));
+			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 4))).addInput('S', (Block.sand)).addInput('G', (Block.gravel)).create("concrete_powder_yellow", new ItemStack(ColorBlocks.concretePowderYellow, 8));
+			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 5))).addInput('S', (Block.sand)).addInput('G', (Block.gravel)).create("concrete_powder_lime", new ItemStack(ColorBlocks.concretePowderLime, 8));
+			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 6))).addInput('S', (Block.sand)).addInput('G', (Block.gravel)).create("concrete_powder_pink", new ItemStack(ColorBlocks.concretePowderPink, 8));
+			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 7))).addInput('S', (Block.sand)).addInput('G', (Block.gravel)).create("concrete_powder_gray", new ItemStack(ColorBlocks.concretePowderGray, 8));
+			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 8))).addInput('S', (Block.sand)).addInput('G', (Block.gravel)).create("concrete_powder_silver", new ItemStack(ColorBlocks.concretePowderSilver, 8));
+			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 9))).addInput('S', (Block.sand)).addInput('G', (Block.gravel)).create("concrete_powder_cyan", new ItemStack(ColorBlocks.concretePowderCyan, 8));
+			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 10))).addInput('S', (Block.sand)).addInput('G', (Block.gravel)).create("concrete_powder_purple", new ItemStack(ColorBlocks.concretePowderPurple, 8));
+			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 11))).addInput('S', (Block.sand)).addInput('G', (Block.gravel)).create("concrete_powder_blue", new ItemStack(ColorBlocks.concretePowderBlue, 8));
+			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 12))).addInput('S', (Block.sand)).addInput('G', (Block.gravel)).create("concrete_powder_brown", new ItemStack(ColorBlocks.concretePowderBrown, 8));
+			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 13))).addInput('S', (Block.sand)).addInput('G', (Block.gravel)).create("concrete_powder_green", new ItemStack(ColorBlocks.concretePowderGreen, 8));
+			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 14))).addInput('S', (Block.sand)).addInput('G', (Block.gravel)).create("concrete_powder_red", new ItemStack(ColorBlocks.concretePowderRed, 8));
+			templatePowder.addInput('D', (new ItemStack(Item.dye, 1, 15))).addInput('S', (Block.sand)).addInput('G', (Block.gravel)).create("concrete_powder_black", new ItemStack(ColorBlocks.concretePowderBlack, 8));
 
 		RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("bed");
 		RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("seat");
