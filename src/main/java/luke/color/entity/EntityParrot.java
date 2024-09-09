@@ -1,14 +1,14 @@
 package luke.color.entity;
 
 import net.minecraft.core.WeightedRandomLootObject;
-import net.minecraft.core.entity.EntityFlying;
+import net.minecraft.core.entity.animal.EntityChicken;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.util.collection.NamespaceID;
 import net.minecraft.core.world.World;
 
 import static luke.color.ColorMod.MOD_ID;
 
-public class EntityParrot extends EntityFlying {
+public class EntityParrot extends EntityChicken {
 	public EntityParrot(World world) {
 		super(world);
 		this.textureIdentifier = new NamespaceID(MOD_ID, "parrot");
