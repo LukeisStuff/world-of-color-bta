@@ -28,7 +28,7 @@ public class BlockPowder extends BlockSand {
 		this.tryToFall(world, x, y, z);
 	}
 
-	private void tryToFall(World world, int i, int j, int k) {
+	public void tryToFall(World world, int i, int j, int k) {
 		if (canFallBelow(world, i, j - 1, k) && j >= 0) {
 			byte byte0 = 32;
 			if (!fallInstantly && world.areBlocksLoaded(i - byte0, j - byte0, k - byte0, i + byte0, j + byte0, k + byte0)) {

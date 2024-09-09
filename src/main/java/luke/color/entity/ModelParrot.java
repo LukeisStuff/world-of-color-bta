@@ -38,7 +38,7 @@ public class ModelParrot extends ModelBase {
 		this.body.setRotationPoint(0.0F, 19.0f, 0.0F);
 
 		this.tail = new Cube(22, 1);
-		this.tail.addBox(-1.5F, 0.0F, -1.5F, 3, 4, 1);
+		this.tail.addBox(-1.5F, 0.0F, 1.5F, 3, 4, 1);
 		this.tail.setRotationPoint(0.0F, 19.0f, 0.0F);
 
 		this.rightLeg = new Cube(14, 18);
@@ -91,7 +91,7 @@ public class ModelParrot extends ModelBase {
 		this.rightWing.rotateAngleZ = limbPitch;
 		this.leftWing.rotateAngleZ = -limbPitch;
 
-		this.tail.rotateAngleX = this.body.rotateAngleX + 0.10F;
+		this.tail.rotateAngleX = this.body.rotateAngleX + 0.25F;
 		this.tail.rotateAngleY = this.body.rotateAngleY;
 	}
 

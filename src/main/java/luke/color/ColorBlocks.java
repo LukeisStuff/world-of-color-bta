@@ -22,7 +22,7 @@ import turniplabs.halplibe.helper.CreativeHelper;
 import static luke.color.ColorMod.MOD_ID;
 
 public class ColorBlocks {
-	private int blockID(String blockName) {
+	public int blockID(String blockName) {
 		return ColorConfig.cfg.getInt("Block IDs." + blockName);
 	}
 

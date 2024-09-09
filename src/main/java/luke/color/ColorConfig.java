@@ -13,11 +13,11 @@ import java.util.stream.Collectors;
 
 public class ColorConfig {
 	public static ConfigUpdater updater = ConfigUpdater.fromProperties();
-	private static final Toml properties = new Toml("World of Color TOML Config");
+	public static final Toml properties = new Toml("World of Color TOML Config");
 	public static TomlConfigHandler cfg;
 
-	private static int blockIDs = 11200;
-	private static int itemIDs = 20000;
+	public static int blockIDs = 11200;
+	public static int itemIDs = 20000;
 
 	static {
 		properties.addCategory("World of Color")

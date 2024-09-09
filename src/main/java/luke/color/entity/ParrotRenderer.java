@@ -14,13 +14,13 @@ public class ParrotRenderer extends LivingRenderer<EntityParrot> {
 		super.render(entityparrot, d, d1, d2, f, f1);
 	}
 
-	protected float getWingRotation(EntityParrot entityparrot, float f) {
+	public float getWingRotation(EntityParrot entityparrot, float f) {
 		float f1 = entityparrot.field_756_e + (entityparrot.field_752_b - entityparrot.field_756_e) * f;
 		float f2 = entityparrot.field_757_d + (entityparrot.destPos - entityparrot.field_757_d) * f;
 		return (MathHelper.sin(f1) + 1.0F) * f2;
 	}
 
-	protected float ticksExisted(EntityParrot entityparrot, float partialTick) {
+	public float ticksExisted(EntityParrot entityparrot, float partialTick) {
 		return this.getWingRotation(entityparrot, partialTick);
 	}
 

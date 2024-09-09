@@ -9,7 +9,7 @@ import static luke.color.ColorMod.MOD_ID;
 
 public class ColorItems {
 
-	private int itemID(String blockName) {
+	public int itemID(String blockName) {
 		return ColorConfig.cfg.getInt("Item IDs." + blockName);
 	}
 
