@@ -1,6 +1,6 @@
 package luke.color.blockmodel;
 
-import net.minecraft.client.render.block.model.BlockModelStandard;
+import net.minecraft.client.render.block.model.BlockModelFullyRotatable;
 import net.minecraft.client.render.texture.stitcher.IconCoordinate;
 import net.minecraft.client.render.texture.stitcher.TextureRegistry;
 import net.minecraft.core.block.Block;
@@ -10,10 +10,10 @@ import net.minecraft.core.util.helper.Side;
 
 import java.util.Iterator;
 
-public class BlockModelConcretePainted<T extends BlockLogic> extends BlockModelStandard<T> {
+public class BlockModelConcreteBaked<T extends BlockLogic> extends BlockModelFullyRotatable<T> {
 	public static final IconCoordinate[] texCoords = new IconCoordinate[16];
 
-	public BlockModelConcretePainted(Block<T> block) {
+	public BlockModelConcreteBaked(Block<T> block) {
 		super(block);
 	}
 
@@ -23,7 +23,7 @@ public class BlockModelConcretePainted<T extends BlockLogic> extends BlockModelS
 
 	static {
 		DyeColor c;
-		for(Iterator<DyeColor> var0 = DyeColor.blockOrderedColors().iterator(); var0.hasNext(); texCoords[c.blockMeta] = TextureRegistry.getTexture("color:block/concrete_" + c.colorID)) {
+		for(Iterator<DyeColor> var0 = DyeColor.blockOrderedColors().iterator(); var0.hasNext(); texCoords[c.blockMeta] = TextureRegistry.getTexture("color:block/concrete_baked_" + c.colorID)) {
 			c = var0.next();
 		}
 

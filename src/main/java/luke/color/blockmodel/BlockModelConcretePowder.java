@@ -10,10 +10,10 @@ import net.minecraft.core.util.helper.Side;
 
 import java.util.Iterator;
 
-public class BlockModelConcretePainted<T extends BlockLogic> extends BlockModelStandard<T> {
+public class BlockModelConcretePowder<T extends BlockLogic> extends BlockModelStandard<T> {
 	public static final IconCoordinate[] texCoords = new IconCoordinate[16];
 
-	public BlockModelConcretePainted(Block<T> block) {
+	public BlockModelConcretePowder(Block<T> block) {
 		super(block);
 	}
 
@@ -23,7 +23,7 @@ public class BlockModelConcretePainted<T extends BlockLogic> extends BlockModelS
 
 	static {
 		DyeColor c;
-		for(Iterator<DyeColor> var0 = DyeColor.blockOrderedColors().iterator(); var0.hasNext(); texCoords[c.blockMeta] = TextureRegistry.getTexture("color:block/concrete_" + c.colorID)) {
+		for(Iterator<DyeColor> var0 = DyeColor.blockOrderedColors().iterator(); var0.hasNext(); texCoords[c.blockMeta] = TextureRegistry.getTexture("color:block/powder_" + c.colorID)) {
 			c = var0.next();
 		}
 

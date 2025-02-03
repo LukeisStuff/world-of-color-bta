@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "color:block/template_baked_concrete",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "color:block/template_baked_concrete",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "color:block/template_baked_concrete",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "color:block/template_baked_concrete",
+      "y": 90
+    }
+  }
+}

@@ -1,15 +1,11 @@
 package luke.color;
 
-import luke.color.block.BlockConcrete;
-import luke.color.block.BlockPowder;
-import luke.color.blockmodel.*;
-import net.minecraft.client.render.block.model.BlockModelSeat;
-import net.minecraft.client.render.block.model.BlockModelStandard;
+import luke.color.block.BlockLogicConcrete;
+import luke.color.block.BlockLogicConcreteBaked;
+import luke.color.block.BlockLogicPowder;
 import net.minecraft.core.block.Block;
-import net.minecraft.core.block.BlockBed;
-import net.minecraft.core.block.BlockSeat;
+import net.minecraft.core.block.BlockLogicBed;
 import net.minecraft.core.block.entity.TileEntity;
-import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
@@ -22,66 +18,52 @@ import turniplabs.halplibe.helper.CreativeHelper;
 import static luke.color.ColorMod.MOD_ID;
 
 public class ColorBlocks {
-	public int blockID(String blockName) {
-		return ColorConfig.cfg.getInt("Block IDs." + blockName);
-	}
 
-	public static Block concrete;
+	int blockID = 1500;
 
-	public static Block concretePowderWhite;
-	public static Block concretePowderOrange;
-	public static Block concretePowderMagenta;
-	public static Block concretePowderLightblue;
-	public static Block concretePowderYellow;
-	public static Block concretePowderLime;
-	public static Block concretePowderPink;
-	public static Block concretePowderGray;
-	public static Block concretePowderSilver;
-	public static Block concretePowderCyan;
-	public static Block concretePowderPurple;
-	public static Block concretePowderBlue;
-	public static Block concretePowderBrown;
-	public static Block concretePowderGreen;
-	public static Block concretePowderRed;
-	public static Block concretePowderBlack;
+	public static Block<?> concrete;
 
-	public static Block bedWhite;
-	public static Block bedOrange;
-	public static Block bedMagenta;
-	public static Block bedLightblue;
-	public static Block bedYellow;
-	public static Block bedLime;
-	public static Block bedPink;
-	public static Block bedGray;
-	public static Block bedSilver;
-	public static Block bedCyan;
-	public static Block bedPurple;
-	public static Block bedBlue;
-	public static Block bedBrown;
-	public static Block bedGreen;
-	public static Block bedBlack;
+	public static Block<?> concretePowder;
 
-	public static Block seatWhite;
-	public static Block seatOrange;
-	public static Block seatMagenta;
-	public static Block seatLightblue;
-	public static Block seatYellow;
-	public static Block seatLime;
-	public static Block seatPink;
-	public static Block seatGray;
-	public static Block seatSilver;
-	public static Block seatCyan;
-	public static Block seatPurple;
-	public static Block seatBlue;
-	public static Block seatBrown;
-	public static Block seatGreen;
-	public static Block seatBlack;
+	public static Block<?> bedWhite;
+	public static Block<?> bedOrange;
+	public static Block<?> bedMagenta;
+	public static Block<?> bedLightblue;
+	public static Block<?> bedYellow;
+	public static Block<?> bedLime;
+	public static Block<?> bedPink;
+	public static Block<?> bedGray;
+	public static Block<?> bedSilver;
+	public static Block<?> bedCyan;
+	public static Block<?> bedPurple;
+	public static Block<?> bedBlue;
+	public static Block<?> bedBrown;
+	public static Block<?> bedGreen;
+	public static Block<?> bedBlack;
+
+	public static Block<?> seatWhite;
+	public static Block<?> seatOrange;
+	public static Block<?> seatMagenta;
+	public static Block<?> seatLightblue;
+	public static Block<?> seatYellow;
+	public static Block<?> seatLime;
+	public static Block<?> seatPink;
+	public static Block<?> seatGray;
+	public static Block<?> seatSilver;
+	public static Block<?> seatCyan;
+	public static Block<?> seatPurple;
+	public static Block<?> seatBlue;
+	public static Block<?> seatBrown;
+	public static Block<?> seatGreen;
+	public static Block<?> seatBlack;
+
+	public static Block<?> concreteBaked;
 
 
 	public void initializeBlockDetails() {
 
 		for (int color = 1; color < 17; color++) {
-			CreativeHelper.setParent(concrete, color - 1, concretePowderBlack, 0);
+			CreativeHelper.setParent(concrete, color - 1, concretePowder, 0);
 		}
 
 	}
@@ -105,79 +87,26 @@ public class ColorBlocks {
 		concrete = new BlockBuilder(MOD_ID)
 			.setHardness(5.0f)
 			.setResistance(25.0f)
-			.setBlockModel(BlockModelConcretePainted::new)
 			.setTags(BlockTags.MINEABLE_BY_PICKAXE)
-			.setItemBlock(block -> new ItemBlockPainted(block, false))
-			.build(new BlockConcrete("concrete", blockID("concrete"), Material.stone));
+			.setBlockItem(block -> new ItemBlockPainted<>(block, false))
+			.build("concrete", "block/concrete", blockID++, b -> new BlockLogicConcrete(b));
 
-		concretePowderWhite = powder
-			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_white"))
-			.build(new BlockPowder("concrete.powder.white", blockID("concretePowderWhite"),0));
+		concretePowder = powder
+			.setBlockItem(block -> new ItemBlockPainted<>(block, false))
+			.build("concrete.powder", "block/concrete_powder", blockID++, b -> new BlockLogicPowder(b));
 
-		concretePowderOrange = powder
-			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_orange"))
-			.build(new BlockPowder("concrete.powder.orange", blockID("concretePowderOrange"),1));
+		concreteBaked = new BlockBuilder(MOD_ID)
+			.setHardness(5.0f)
+			.setResistance(25.0f)
+			.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+			.setBlockItem(block -> new ItemBlockPainted<>(block, true))
+			.build("concrete.baked", "block/concrete_baked", blockID++, b -> new BlockLogicConcreteBaked(b));
 
-		concretePowderMagenta = powder
-			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_magenta"))
-			.build(new BlockPowder("concrete.powder.magenta", blockID("concretePowderMagenta"),2));
-
-		concretePowderLightblue = powder
-			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_lightblue"))
-			.build(new BlockPowder("concrete.powder.lightblue", blockID("concretePowderLightblue"),3));
-
-		concretePowderYellow = powder
-			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_yellow"))
-			.build(new BlockPowder("concrete.powder.yellow", blockID("concretePowderYellow"),4));
-
-		concretePowderLime = powder
-			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_lime"))
-			.build(new BlockPowder("concrete.powder.lime", blockID("concretePowderLime"),5));
-
-		concretePowderPink = powder
-			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_pink"))
-			.build(new BlockPowder("concrete.powder.pink", blockID("concretePowderPink"),6));
-
-		concretePowderGray = powder
-			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_gray"))
-			.build(new BlockPowder("concrete.powder.gray", blockID("concretePowderGray"),7));
-
-		concretePowderSilver = powder
-			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_silver"))
-			.build(new BlockPowder("concrete.powder.silver", blockID("concretePowderSilver"),8));
-
-		concretePowderCyan = powder
-			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_cyan"))
-			.build(new BlockPowder("concrete.powder.cyan", blockID("concretePowderCyan"),9));
-
-		concretePowderPurple = powder
-			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_purple"))
-			.build(new BlockPowder("concrete.powder.purple", blockID("concretePowderPurple"),10));
-
-		concretePowderBlue = powder
-			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_blue"))
-			.build(new BlockPowder("concrete.powder.blue", blockID("concretePowderBlue"),11));
-
-		concretePowderBrown = powder
-			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_brown"))
-			.build(new BlockPowder("concrete.powder.brown", blockID("concretePowderBrown"),12));
-
-		concretePowderGreen = powder
-			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_green"))
-			.build(new BlockPowder("concrete.powder.green", blockID("concretePowderGreen"),13));
-
-		concretePowderRed = powder
-			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_red"))
-			.build(new BlockPowder("concrete.powder.red", blockID("concretePowderRed"),14));
-
-		concretePowderBlack = powder
-			.setBlockModel(block -> new BlockModelStandard<>(block).withTextures("color:block/powder_black"))
-			.build(new BlockPowder("concrete.powder.black", blockID("concretePowderBlack"),15));
 
 
 		bedOrange = bed
 			.setBlockModel(BlockModelOrangeBed::new)
-			.build(new BlockBed("bed.orange", blockID("bedOrange")) {
+			.build(new BlockLogicBed("bed.orange", blockID("bedOrange")) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.bedOrange)};
 				}

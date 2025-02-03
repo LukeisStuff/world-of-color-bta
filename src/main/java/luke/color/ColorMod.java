@@ -1,11 +1,7 @@
 package luke.color;
 
 import luke.color.entity.ColorEntities;
-import luke.color.entity.EntityParrot;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.core.entity.SpawnListEntry;
-import net.minecraft.core.enums.EnumCreatureType;
-import net.minecraft.core.world.biome.Biomes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.SoundHelper;
@@ -18,7 +14,7 @@ public class ColorMod implements ModInitializer, ClientStartEntrypoint, GameStar
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
     @Override
     public void onInitialize() {
-		Biomes.OVERWORLD_RAINFOREST.getSpawnableList(EnumCreatureType.creature).add(new SpawnListEntry(EntityParrot.class, 102));
+//		Biomes.OVERWORLD_RAINFOREST.getSpawnableList(EnumCreatureType.creature).add(new SpawnListEntry(MobParrot.class, 102));
 
 		SoundHelper.addSound(MOD_ID, "parrotidle1.ogg");
 		SoundHelper.addSound(MOD_ID, "parrotidle2.ogg");

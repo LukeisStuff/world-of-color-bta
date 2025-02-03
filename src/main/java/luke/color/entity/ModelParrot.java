@@ -71,28 +71,28 @@ public class ModelParrot extends ModelBase {
 	}
 
 	public void setRotationAngles(float limbSwing, float limbYaw, float limbPitch, float headYaw, float headPitch, float scale) {
-		this.head.rotateAngleX = headPitch / 57.29578F;
-		this.head.rotateAngleY = headYaw / 57.29578F;
-		this.headTop.rotateAngleX = this.head.rotateAngleX;
-		this.headTop.rotateAngleY = this.head.rotateAngleY;
-		this.feather.rotateAngleX = this.head.rotateAngleX;
-		this.feather.rotateAngleY = this.head.rotateAngleY;
-		this.beak.rotateAngleX = this.head.rotateAngleX;
-		this.beak.rotateAngleY = this.head.rotateAngleY;
-		this.rightLeg.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbYaw;
-		this.leftLeg.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + 3.141593F) * 1.4F * limbYaw;
+		this.head.xRot = headPitch / 57.29578F;
+		this.head.yRot = headYaw / 57.29578F;
+		this.headTop.xRot = this.head.xRot;
+		this.headTop.yRot = this.head.yRot;
+		this.feather.xRot = this.head.xRot;
+		this.feather.yRot = this.head.yRot;
+		this.beak.xRot = this.head.xRot;
+		this.beak.yRot = this.head.yRot;
+		this.rightLeg.xRot = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbYaw;
+		this.leftLeg.xRot = MathHelper.cos(limbSwing * 0.6662F + 3.141593F) * 1.4F * limbYaw;
 
-		this.body.rotateAngleX = 0.25F;
+		this.body.xRot = 0.25F;
 
-		this.leftWing.rotateAngleX = this.body.rotateAngleX + 0.10F;
-		this.leftWing.rotateAngleY = this.body.rotateAngleY;
-		this.rightWing.rotateAngleX = this.body.rotateAngleX + 0.10F;
-		this.rightWing.rotateAngleY = this.body.rotateAngleY;
-		this.rightWing.rotateAngleZ = limbPitch;
-		this.leftWing.rotateAngleZ = -limbPitch;
+		this.leftWing.xRot = this.body.xRot + 0.10F;
+		this.leftWing.yRot = this.body.yRot;
+		this.rightWing.xRot = this.body.xRot + 0.10F;
+		this.rightWing.yRot = this.body.yRot;
+		this.rightWing.zRot = limbPitch;
+		this.leftWing.zRot = -limbPitch;
 
-		this.tail.rotateAngleX = this.body.rotateAngleX + 0.25F;
-		this.tail.rotateAngleY = this.body.rotateAngleY;
+		this.tail.xRot = this.body.xRot + 0.25F;
+		this.tail.yRot = this.body.yRot;
 	}
 
 }
