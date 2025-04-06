@@ -11,7 +11,7 @@ public class BlockModelBlackBed<T extends BlockLogic> extends BlockModelBed<T> {
 		this.bedTextures[0] = TextureRegistry.getTexture("color:block/bed/bed_black_foot_front");
 		this.bedTextures[1] = TextureRegistry.getTexture("color:block/bed/bed_black_foot_side");
 		this.bedTextures[2] = TextureRegistry.getTexture("color:block/bed/bed_black_foot_top");
-		this.bedTextures[3] = TextureRegistry.getTexture("minecraft:block/bed_head_front");
+		this.bedTextures[3] = TextureRegistry.getTexture("minecraft:block/bed/head_front");
 		this.bedTextures[4] = TextureRegistry.getTexture("color:block/bed/bed_black_head_side");
 		this.bedTextures[5] = TextureRegistry.getTexture("color:block/bed/bed_black_head_top");
 	}

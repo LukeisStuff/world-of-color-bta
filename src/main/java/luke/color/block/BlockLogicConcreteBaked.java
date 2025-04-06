@@ -1,6 +1,7 @@
 package luke.color.block;
 
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockLogic;
 import net.minecraft.core.block.BlockLogicFullyRotatable;
 import net.minecraft.core.block.IPainted;
 import net.minecraft.core.block.entity.TileEntity;
@@ -10,7 +11,7 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.DyeColor;
 import net.minecraft.core.world.World;
 
-public class BlockLogicConcreteBaked extends BlockLogicFullyRotatable implements IPainted {
+public class BlockLogicConcreteBaked extends BlockLogic implements IPainted {
 
 	public BlockLogicConcreteBaked(Block<?> block) {
 		super(block, Material.stone);

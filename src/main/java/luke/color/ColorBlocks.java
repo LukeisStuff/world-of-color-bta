@@ -5,6 +5,7 @@ import luke.color.block.BlockLogicConcreteBaked;
 import luke.color.block.BlockLogicPowder;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLogicBed;
+import net.minecraft.core.block.BlockLogicSeat;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.enums.EnumDropCause;
@@ -105,120 +106,105 @@ public class ColorBlocks {
 
 
 		bedOrange = bed
-			.setBlockModel(BlockModelOrangeBed::new)
-			.build(new BlockLogicBed("bed.orange", blockID("bedOrange")) {
+			.build("bed.orange","bed_orange", blockID++, b -> new BlockLogicBed(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.bedOrange)};
 				}
 		});
 
 		bedYellow = bed
-			.setBlockModel(BlockModelYellowBed::new)
-			.build(new BlockBed("bed.yellow", blockID("bedYellow")) {
+			.build("bed.yellow","bed_yellow", blockID++, b -> new BlockLogicBed(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.bedYellow)};
 				}
 			});
 
 		bedLime = bed
-			.setBlockModel(BlockModelLimeBed::new)
-			.build(new BlockBed("bed.lime", blockID("bedLime")) {
+			.build("bed.lime","bed_lime", blockID++, b -> new BlockLogicBed(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.bedLime)};
 				}
 			});
 
 		bedGreen = bed
-			.setBlockModel(BlockModelGreenBed::new)
-			.build(new BlockBed("bed.green", blockID("bedGreen")) {
+			.build("bed.green","bed_green", blockID++, b -> new BlockLogicBed(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.bedGreen)};
 				}
 			});
 
 		bedCyan = bed
-			.setBlockModel(BlockModelCyanBed::new)
-			.build(new BlockBed("bed.cyan", blockID("bedCyan")) {
+			.build("bed.cyan","bed_cyan", blockID++, b -> new BlockLogicBed(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.bedCyan)};
 				}
 			});
 
 		bedLightblue = bed
-			.setBlockModel(BlockModelLightblueBed::new)
-			.build(new BlockBed("bed.lightblue", blockID("bedLightblue")) {
+			.build("bed.lightblue","bed_lightblue", blockID++, b -> new BlockLogicBed(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.bedLightblue)};
 				}
 			});
 
 		bedBlue = bed
-			.setBlockModel(BlockModelBlueBed::new)
-			.build(new BlockBed("bed.blue", blockID("bedBlue")) {
+			.build("bed.blue","bed_blue", blockID++, b -> new BlockLogicBed(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.bedBlue)};
 				}
 			});
 
 		bedPurple = bed
-			.setBlockModel(BlockModelPurpleBed::new)
-			.build(new BlockBed("bed.purple", blockID("bedPurple")) {
+			.build("bed.purple","bed_purple", blockID++, b -> new BlockLogicBed(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.bedPurple)};
 				}
 			});
 
 		bedMagenta = bed
-			.setBlockModel(BlockModelMagentaBed::new)
-			.build(new BlockBed("bed.magenta", blockID("bedMagenta")) {
+			.build("bed.magenta","bed_magenta", blockID++, b -> new BlockLogicBed(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.bedMagenta)};
 				}
 			});
 
 		bedPink = bed
-			.setBlockModel(BlockModelPinkBed::new)
-			.build(new BlockBed("bed.pink", blockID("bedPink")) {
+			.build("bed.pink","bed_pink", blockID++, b -> new BlockLogicBed(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.bedPink)};
 				}
 			});
 
 		bedBrown = bed
-			.setBlockModel(BlockModelBrownBed::new)
-			.build(new BlockBed("bed.brown", blockID("bedBrown")) {
+			.build("bed.brown","bed_brown", blockID++, b -> new BlockLogicBed(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.bedBrown)};
 				}
 			});
 
 		bedWhite = bed
-			.setBlockModel(BlockModelWhiteBed::new)
-			.build(new BlockBed("bed.white", blockID("bedWhite")) {
+			.build("bed.white","bed_white", blockID++, b -> new BlockLogicBed(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.bedWhite)};
 				}
 			});
 
 		bedSilver = bed
-			.setBlockModel(BlockModelSilverBed::new)
-			.build(new BlockBed("bed.silver", blockID("bedSilver")) {
+			.build("bed.silver","bed_silver", blockID++, b -> new BlockLogicBed(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.bedSilver)};
 				}
 			});
 
 		bedGray = bed
-			.setBlockModel(BlockModelGrayBed::new)
-			.build(new BlockBed("bed.gray", blockID("bedGray")) {
+			.build("bed.gray","bed_gray", blockID++, b -> new BlockLogicBed(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.bedGray)};
 				}
 			});
 
 		bedBlack = bed
-			.setBlockModel(BlockModelBlackBed::new)
-			.build(new BlockBed("bed.black", blockID("bedBlack")) {
+			.build("bed.black","bed_black", blockID++, b -> new BlockLogicBed(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.bedBlack)};
 				}
@@ -227,120 +213,105 @@ public class ColorBlocks {
 
 
 		seatOrange = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_orange_top", "minecraft:block/planks_oak", "color:block/bed/bed_orange_foot_front"))
-			.build(new BlockSeat("seat.orange", blockID("seatOrange")) {
+			.build("seat.orange","seat_orange", blockID++, b -> new BlockLogicSeat(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatOrange)};
 				}
 			});
 
 		seatYellow = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_yellow_top", "minecraft:block/planks_oak", "color:block/bed/bed_yellow_foot_front"))
-			.build(new BlockSeat("seat.yellow", blockID("seatYellow")) {
+			.build("seat.yellow","seat_yellow", blockID++, b -> new BlockLogicSeat(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatYellow)};
 				}
 			});
 
 		seatLime = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_lime_top", "minecraft:block/planks_oak", "color:block/bed/bed_lime_foot_front"))
-			.build(new BlockSeat("seat.lime", blockID("seatLime")) {
+			.build("seat.lime","seat_lime", blockID++, b -> new BlockLogicSeat(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatLime)};
 				}
 			});
 
 		seatGreen = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_green_top", "minecraft:block/planks_oak", "color:block/bed/bed_green_foot_front"))
-			.build(new BlockSeat("seat.green", blockID("seatGreen")) {
+			.build("seat.green","seat_green", blockID++, b -> new BlockLogicSeat(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatGreen)};
 				}
 			});
 
 		seatCyan = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_cyan_top", "minecraft:block/planks_oak", "color:block/bed/bed_cyan_foot_front"))
-			.build(new BlockSeat("seat.cyan", blockID("seatCyan")) {
+			.build("seat.cyan","seat_cyan", blockID++, b -> new BlockLogicSeat(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatCyan)};
 				}
 			});
 
 		seatLightblue = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_lightblue_top", "minecraft:block/planks_oak", "color:block/bed/bed_lightblue_foot_front"))
-			.build(new BlockSeat("seat.lightblue", blockID("seatLightblue")) {
+			.build("seat.lightblue","seat_lightblue", blockID++, b -> new BlockLogicSeat(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatLightblue)};
 				}
 			});
 
 		seatBlue = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_blue_top", "minecraft:block/planks_oak", "color:block/bed/bed_blue_foot_front"))
-			.build(new BlockSeat("seat.blue", blockID("seatBlue")) {
+			.build("seat.blue","seat_blue", blockID++, b -> new BlockLogicSeat(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatBlue)};
 				}
 			});
 
 		seatPurple = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_purple_top", "minecraft:block/planks_oak", "color:block/bed/bed_purple_foot_front"))
-			.build(new BlockSeat("seat.purple", blockID("seatPurple")) {
+			.build("seat.purple","seat_purple", blockID++, b -> new BlockLogicSeat(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatPurple)};
 				}
 			});
 
 		seatMagenta = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_magenta_top", "minecraft:block/planks_oak", "color:block/bed/bed_magenta_foot_front"))
-			.build(new BlockSeat("seat.magenta", blockID("seatMagenta")) {
+			.build("seat.magenta","seat_magenta", blockID++, b -> new BlockLogicSeat(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatMagenta)};
 				}
 			});
 
 		seatPink = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_pink_top", "minecraft:block/planks_oak", "color:block/bed/bed_pink_foot_front"))
-			.build(new BlockSeat("seat.pink", blockID("seatPink")) {
+			.build("seat.pink","seat_pink", blockID++, b -> new BlockLogicSeat(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatPink)};
 				}
 			});
 
 		seatBrown = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_brown_top", "minecraft:block/planks_oak", "color:block/bed/bed_brown_foot_front"))
-			.build(new BlockSeat("seat.brown", blockID("seatBrown")) {
+			.build("seat.brown","seat_brown", blockID++, b -> new BlockLogicSeat(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatBrown)};
 				}
 			});
 
 		seatWhite = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_white_top", "minecraft:block/planks_oak", "color:block/bed/bed_white_foot_front"))
-			.build(new BlockSeat("seat.white", blockID("seatWhite")) {
+			.build("seat.white","seat_white", blockID++, b -> new BlockLogicSeat(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatWhite)};
 				}
 			});
 
 		seatSilver = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_silver_top", "minecraft:block/planks_oak", "color:block/bed/bed_silver_foot_front"))
-			.build(new BlockSeat("seat.silver", blockID("seatSilver")) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.seatSilver)};
-				}
-			});
+			.build("seat.silver","seat_silver", blockID++, b -> new BlockLogicSeat(b) {
+					public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+						return new ItemStack[]{new ItemStack(ColorItems.seatSilver)};
+					}
+				});
 
 		seatGray = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_gray_top", "minecraft:block/planks_oak", "color:block/bed/bed_gray_foot_front"))
-			.build(new BlockSeat("seat.gray", blockID("seatGray")) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.seatGray)};
-				}
-			});
+			.build("seat.gray","seat_gray", blockID++, b -> new BlockLogicSeat(b) {
+					public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+						return new ItemStack[]{new ItemStack(ColorItems.seatGray)};
+					}
+				});
 
 		seatBlack = bed
-			.setBlockModel(block -> new BlockModelSeat<>(block).withTextures("color:block/seat/seat_black_top", "minecraft:block/planks_oak", "color:block/bed/bed_black_foot_front"))
-			.build(new BlockSeat("seat.black", blockID("seatBlack")) {
+			.build("seat.black","seat_black", blockID++, b -> new BlockLogicSeat(b) {
 				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
 					return new ItemStack[]{new ItemStack(ColorItems.seatBlack)};
 				}

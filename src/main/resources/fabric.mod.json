@@ -25,7 +25,7 @@
 			"luke.color.ColorMod"
 		],
 		"initModels": [
-			"luke.color.ColorBlockModels"
+			"luke.color.ColorModels"
 		],
 		"afterGameStart": [
 			"luke.color.ColorMod"
