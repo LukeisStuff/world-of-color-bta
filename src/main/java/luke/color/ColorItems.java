@@ -9,7 +9,7 @@ import static luke.color.ColorMod.MOD_ID;
 
 public class ColorItems {
 
-	int itemID = 12000;
+	int itemID = 21200;
 
 	public static Item bedWhite;
 	public static Item bedOrange;
@@ -46,49 +46,49 @@ public class ColorItems {
 	public void initilizeItems() {
 
 		bedOrange = new ItemBuilder(MOD_ID)
-			.build(new ItemColorBed("bed.orange", "color:item/bed_orange", itemID++, ColorBlocks.bedOrange));
+			.build(new ItemColorBed("bed.orange", "color:item/bed_orange", itemID++, ColorBlocks.bedOrange).setMaxStackSize(1));
 
 		bedYellow = new ItemBuilder(MOD_ID)
-			.build(new ItemColorBed("bed.yellow", "color:item/bed_yellow", itemID++, ColorBlocks.bedYellow));
+			.build(new ItemColorBed("bed.yellow", "color:item/bed_yellow", itemID++, ColorBlocks.bedYellow).setMaxStackSize(1));
 
 		bedLime = new ItemBuilder(MOD_ID)
-			.build(new ItemColorBed("bed.lime", "color:item/bed_lime", itemID++, ColorBlocks.bedLime));
+			.build(new ItemColorBed("bed.lime", "color:item/bed_lime", itemID++, ColorBlocks.bedLime).setMaxStackSize(1));
 
 		bedGreen = new ItemBuilder(MOD_ID)
-			.build(new ItemColorBed("bed.green", "color:item/bed_green", itemID++, ColorBlocks.bedGreen));
+			.build(new ItemColorBed("bed.green", "color:item/bed_green", itemID++, ColorBlocks.bedGreen).setMaxStackSize(1));
 
 		bedCyan = new ItemBuilder(MOD_ID)
-			.build(new ItemColorBed("bed.cyan", "color:item/bed_cyan", itemID++, ColorBlocks.bedCyan));
+			.build(new ItemColorBed("bed.cyan", "color:item/bed_cyan", itemID++, ColorBlocks.bedCyan).setMaxStackSize(1));
 
 		bedLightblue = new ItemBuilder(MOD_ID)
-			.build(new ItemColorBed("bed.lightblue", "color:item/bed_lightblue", itemID++, ColorBlocks.bedLightblue));
+			.build(new ItemColorBed("bed.lightblue", "color:item/bed_lightblue", itemID++, ColorBlocks.bedLightblue).setMaxStackSize(1));
 
 		bedBlue = new ItemBuilder(MOD_ID)
-			.build(new ItemColorBed("bed.blue", "color:item/bed_blue", itemID++, ColorBlocks.bedBlue));
+			.build(new ItemColorBed("bed.blue", "color:item/bed_blue", itemID++, ColorBlocks.bedBlue).setMaxStackSize(1));
 
 		bedPurple = new ItemBuilder(MOD_ID)
-			.build(new ItemColorBed("bed.purple", "color:item/bed_purple", itemID++, ColorBlocks.bedPurple));
+			.build(new ItemColorBed("bed.purple", "color:item/bed_purple", itemID++, ColorBlocks.bedPurple).setMaxStackSize(1));
 
 		bedMagenta = new ItemBuilder(MOD_ID)
-			.build(new ItemColorBed("bed.magenta", "color:item/bed_magenta", itemID++, ColorBlocks.bedMagenta));
+			.build(new ItemColorBed("bed.magenta", "color:item/bed_magenta", itemID++, ColorBlocks.bedMagenta).setMaxStackSize(1));
 
 		bedPink = new ItemBuilder(MOD_ID)
-			.build(new ItemColorBed("bed.pink", "color:item/bed_pink", itemID++, ColorBlocks.bedPink));
+			.build(new ItemColorBed("bed.pink", "color:item/bed_pink", itemID++, ColorBlocks.bedPink).setMaxStackSize(1));
 
 		bedBrown = new ItemBuilder(MOD_ID)
-			.build(new ItemColorBed("bed.brown", "color:item/bed_brown", itemID++, ColorBlocks.bedBrown));
+			.build(new ItemColorBed("bed.brown", "color:item/bed_brown", itemID++, ColorBlocks.bedBrown).setMaxStackSize(1));
 
 		bedWhite = new ItemBuilder(MOD_ID)
-			.build(new ItemColorBed("bed.white", "color:item/bed_white", itemID++, ColorBlocks.bedWhite));
+			.build(new ItemColorBed("bed.white", "color:item/bed_white", itemID++, ColorBlocks.bedWhite).setMaxStackSize(1));
 
 		bedSilver = new ItemBuilder(MOD_ID)
-			.build(new ItemColorBed("bed.silver", "color:item/bed_silver", itemID++, ColorBlocks.bedSilver));
+			.build(new ItemColorBed("bed.silver", "color:item/bed_silver", itemID++, ColorBlocks.bedSilver).setMaxStackSize(1));
 
 		bedGray = new ItemBuilder(MOD_ID)
-			.build(new ItemColorBed("bed.gray", "color:item/bed_gray", itemID++, ColorBlocks.bedGray));
+			.build(new ItemColorBed("bed.gray", "color:item/bed_gray", itemID++, ColorBlocks.bedGray).setMaxStackSize(1));
 
 		bedBlack = new ItemBuilder(MOD_ID)
-			.build(new ItemColorBed("bed.black", "color:item/bed_black", itemID++, ColorBlocks.bedBlack));
+			.build(new ItemColorBed("bed.black", "color:item/bed_black", itemID++, ColorBlocks.bedBlack).setMaxStackSize(1));
 
 
 

@@ -41,8 +41,8 @@ public class ItemColorBed extends Item {
 			byte0 = 1;
 		}
 
-		if (world.isAirBlock(blockX, blockY, blockZ) && world.isAirBlock(blockX + byte0, blockY, blockZ + byte1) && world.canPlaceOnSurfaceOfBlock(blockX, blockY - 1, blockZ) && world.canPlaceOnSurfaceOfBlock(blockX + byte0, blockY - 1, blockZ + byte1) && world.canBlockBePlacedAt(bedToPlace.id(), blockX, blockY, blockZ, false, side) && itemstack.consumeItem(entityplayer)) {
-			world.playBlockSoundEffect(entityplayer, (float)blockX + 0.5F, (float)blockY + 0.5F, (float)blockZ + 0.5F, bedToPlace, EnumBlockSoundEffectType.PLACE);
+		if (world.isAirBlock(blockX, blockY, blockZ) && world.isAirBlock(blockX + byte0, blockY, blockZ + byte1) && world.canPlaceOnSurfaceOfBlock(blockX, blockY - 1, blockZ) && world.canPlaceOnSurfaceOfBlock(blockX + byte0, blockY - 1, blockZ + byte1) && world.canBlockBePlacedAt(this.bedToPlace.id(), blockX, blockY, blockZ, false, side) && itemstack.consumeItem(entityplayer)) {
+			world.playBlockSoundEffect(entityplayer, (float)blockX + 0.5F, (float)blockY + 0.5F, (float)blockZ + 0.5F, this.bedToPlace, EnumBlockSoundEffectType.PLACE);
 			world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, this.bedToPlace.id(), i1);
 			world.setBlockAndMetadataWithNotify(blockX + byte0, blockY, blockZ + byte1, this.bedToPlace.id(), i1 + 8);
 			return true;

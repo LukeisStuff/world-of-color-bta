@@ -19,7 +19,7 @@ import static luke.color.ColorMod.MOD_ID;
 
 public class ColorBlocks {
 
-	int blockID = 1120;
+	int blockID = 1200;
 
 	public static Block<?> concrete;
 
