@@ -78,7 +78,7 @@ public class ColorRecipes implements RecipeEntrypoint {
 
 	@Override
 	public void onRecipesReady() {
-//		initializeRecipes();
+		initializeRecipes();
 	}
 
 	@Override

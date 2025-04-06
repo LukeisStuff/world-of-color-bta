@@ -1,7 +1,6 @@
 package luke.color;
 
 import luke.color.block.BlockLogicConcrete;
-import luke.color.block.BlockLogicConcreteBaked;
 import luke.color.block.BlockLogicPowder;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLogicBed;
@@ -20,7 +19,7 @@ import static luke.color.ColorMod.MOD_ID;
 
 public class ColorBlocks {
 
-	int blockID = 1500;
+	int blockID = 1120;
 
 	public static Block<?> concrete;
 
@@ -58,8 +57,6 @@ public class ColorBlocks {
 	public static Block<?> seatGreen;
 	public static Block<?> seatBlack;
 
-	public static Block<?> concreteBaked;
-
 
 	public void initializeBlockDetails() {
 
@@ -95,14 +92,6 @@ public class ColorBlocks {
 		concretePowder = powder
 			.setBlockItem(block -> new ItemBlockPainted<>(block, false))
 			.build("concrete.powder", "block/concrete_powder", blockID++, b -> new BlockLogicPowder(b));
-
-		concreteBaked = new BlockBuilder(MOD_ID)
-			.setHardness(5.0f)
-			.setResistance(25.0f)
-			.setTags(BlockTags.MINEABLE_BY_PICKAXE)
-			.setBlockItem(block -> new ItemBlockPainted<>(block, true))
-			.build("concrete.baked", "block/concrete_baked", blockID++, b -> new BlockLogicConcreteBaked(b));
-
 
 
 		bedOrange = bed

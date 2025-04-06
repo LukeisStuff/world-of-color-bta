@@ -1,10 +1,15 @@
 package luke.color;
 
+import luke.color.item.ItemColorBed;
 import net.minecraft.core.item.Item;
+import net.minecraft.core.item.ItemPlaceable;
+import turniplabs.halplibe.helper.ItemBuilder;
+
+import static luke.color.ColorMod.MOD_ID;
 
 public class ColorItems {
 
-	int itemID = 1500;
+	int itemID = 12000;
 
 	public static Item bedWhite;
 	public static Item bedOrange;
@@ -40,127 +45,97 @@ public class ColorItems {
 
 	public void initilizeItems() {
 
-//		bedOrange = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/orange_bed")
-//			.build(new ItemColorBed("bed.orange", itemID("bedOrange"), ColorBlocks.bedOrange));
-//
-//		bedYellow = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/yellow_bed")
-//			.build(new ItemColorBed("bed.yellow", itemID("bedYellow"), ColorBlocks.bedYellow));
-//
-//		bedLime = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/lime_bed")
-//			.build(new ItemColorBed("bed.lime", itemID("bedLime"), ColorBlocks.bedLime));
-//
-//		bedGreen = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/green_bed")
-//			.build(new ItemColorBed("bed.green", itemID("bedGreen"), ColorBlocks.bedGreen));
-//
-//		bedCyan = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/cyan_bed")
-//			.build(new ItemColorBed("bed.cyan", itemID("bedCyan"), ColorBlocks.bedCyan));
-//
-//		bedLightblue = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/lightblue_bed")
-//			.build(new ItemColorBed("bed.lightblue", itemID("bedLightblue"), ColorBlocks.bedLightblue));
-//
-//		bedBlue = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/blue_bed")
-//			.build(new ItemColorBed("bed.blue", itemID("bedBlue"), ColorBlocks.bedBlue));
-//
-//		bedPurple = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/purple_bed")
-//			.build(new ItemColorBed("bed.purple", itemID("bedPurple"), ColorBlocks.bedPurple));
-//
-//		bedMagenta = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/magenta_bed")
-//			.build(new ItemColorBed("bed.magenta", itemID("bedMagenta"), ColorBlocks.bedMagenta));
-//
-//		bedPink = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/pink_bed")
-//			.build(new ItemColorBed("bed.pink", itemID("bedPink"), ColorBlocks.bedPink));
-//
-//		bedBrown = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/brown_bed")
-//			.build(new ItemColorBed("bed.brown", itemID("bedBrown"), ColorBlocks.bedBrown));
-//
-//		bedWhite = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/white_bed")
-//			.build(new ItemColorBed("bed.white", itemID("bedWhite"), ColorBlocks.bedWhite));
-//
-//		bedSilver = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/silver_bed")
-//			.build(new ItemColorBed("bed.silver", itemID("bedSilver"), ColorBlocks.bedSilver));
-//
-//		bedGray = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/gray_bed")
-//			.build(new ItemColorBed("bed.gray", itemID("bedGray"), ColorBlocks.bedGray));
-//
-//		bedBlack = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/black_bed")
-//			.build(new ItemColorBed("bed.black", itemID("bedBlack"), ColorBlocks.bedBlack));
-//
-//
-//
-//		seatOrange = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/orange_seat")
-//			.build(new ItemPlaceable("seat.orange", itemID("seatOrange"), ColorBlocks.seatOrange));
-//
-//		seatYellow = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/yellow_seat")
-//			.build(new ItemPlaceable("seat.yellow", itemID("seatYellow"), ColorBlocks.seatYellow));
-//
-//		seatLime = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/lime_seat")
-//			.build(new ItemPlaceable("seat.lime", itemID("seatLime"), ColorBlocks.seatLime));
-//
-//		seatGreen = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/green_seat")
-//			.build(new ItemPlaceable("seat.green", itemID("seatGreen"), ColorBlocks.seatGreen));
-//
-//		seatCyan = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/cyan_seat")
-//			.build(new ItemPlaceable("seat.cyan", itemID("seatCyan"), ColorBlocks.seatCyan));
-//
-//		seatLightblue = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/lightblue_seat")
-//			.build(new ItemPlaceable("seat.lightblue", itemID("seatLightblue"), ColorBlocks.seatLightblue));
-//
-//		seatBlue = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/blue_seat")
-//			.build(new ItemPlaceable("seat.blue", itemID("seatBlue"), ColorBlocks.seatBlue));
-//
-//		seatPurple = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/purple_seat")
-//			.build(new ItemPlaceable("seat.purple", itemID("seatPurple"), ColorBlocks.seatPurple));
-//
-//		seatMagenta = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/magenta_seat")
-//			.build(new ItemPlaceable("seat.magenta", itemID("seatMagenta"), ColorBlocks.seatMagenta));
-//
-//		seatPink = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/pink_seat")
-//			.build(new ItemPlaceable("seat.pink", itemID("seatPink"), ColorBlocks.seatPink));
-//
-//		seatBrown = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/brown_seat")
-//			.build(new ItemPlaceable("seat.brown", itemID("seatBrown"), ColorBlocks.seatBrown));
-//
-//		seatWhite = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/white_seat")
-//			.build(new ItemPlaceable("seat.white", itemID("seatWhite"), ColorBlocks.seatWhite));
-//
-//		seatSilver = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/silver_seat")
-//			.build(new ItemPlaceable("seat.silver", itemID("seatSilver"), ColorBlocks.seatSilver));
-//
-//		seatGray = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/gray_seat")
-//			.build(new ItemPlaceable("seat.gray", itemID("seatGray"), ColorBlocks.seatGray));
-//
-//		seatBlack = new ItemBuilder(MOD_ID)
-//			.setIcon("color:item/black_seat")
-//			.build(new ItemPlaceable("seat.black", itemID("seatBlack"), ColorBlocks.seatBlack));
+		bedOrange = new ItemBuilder(MOD_ID)
+			.build(new ItemColorBed("bed.orange", "color:item/bed_orange", itemID++, ColorBlocks.bedOrange));
+
+		bedYellow = new ItemBuilder(MOD_ID)
+			.build(new ItemColorBed("bed.yellow", "color:item/bed_yellow", itemID++, ColorBlocks.bedYellow));
+
+		bedLime = new ItemBuilder(MOD_ID)
+			.build(new ItemColorBed("bed.lime", "color:item/bed_lime", itemID++, ColorBlocks.bedLime));
+
+		bedGreen = new ItemBuilder(MOD_ID)
+			.build(new ItemColorBed("bed.green", "color:item/bed_green", itemID++, ColorBlocks.bedGreen));
+
+		bedCyan = new ItemBuilder(MOD_ID)
+			.build(new ItemColorBed("bed.cyan", "color:item/bed_cyan", itemID++, ColorBlocks.bedCyan));
+
+		bedLightblue = new ItemBuilder(MOD_ID)
+			.build(new ItemColorBed("bed.lightblue", "color:item/bed_lightblue", itemID++, ColorBlocks.bedLightblue));
+
+		bedBlue = new ItemBuilder(MOD_ID)
+			.build(new ItemColorBed("bed.blue", "color:item/bed_blue", itemID++, ColorBlocks.bedBlue));
+
+		bedPurple = new ItemBuilder(MOD_ID)
+			.build(new ItemColorBed("bed.purple", "color:item/bed_purple", itemID++, ColorBlocks.bedPurple));
+
+		bedMagenta = new ItemBuilder(MOD_ID)
+			.build(new ItemColorBed("bed.magenta", "color:item/bed_magenta", itemID++, ColorBlocks.bedMagenta));
+
+		bedPink = new ItemBuilder(MOD_ID)
+			.build(new ItemColorBed("bed.pink", "color:item/bed_pink", itemID++, ColorBlocks.bedPink));
+
+		bedBrown = new ItemBuilder(MOD_ID)
+			.build(new ItemColorBed("bed.brown", "color:item/bed_brown", itemID++, ColorBlocks.bedBrown));
+
+		bedWhite = new ItemBuilder(MOD_ID)
+			.build(new ItemColorBed("bed.white", "color:item/bed_white", itemID++, ColorBlocks.bedWhite));
+
+		bedSilver = new ItemBuilder(MOD_ID)
+			.build(new ItemColorBed("bed.silver", "color:item/bed_silver", itemID++, ColorBlocks.bedSilver));
+
+		bedGray = new ItemBuilder(MOD_ID)
+			.build(new ItemColorBed("bed.gray", "color:item/bed_gray", itemID++, ColorBlocks.bedGray));
+
+		bedBlack = new ItemBuilder(MOD_ID)
+			.build(new ItemColorBed("bed.black", "color:item/bed_black", itemID++, ColorBlocks.bedBlack));
+
+
+
+		seatOrange = new ItemBuilder(MOD_ID)
+			.build(new ItemPlaceable("seat.orange", "color:item/seat_orange", itemID++, ColorBlocks.seatOrange));
+
+		seatYellow = new ItemBuilder(MOD_ID)
+			.build(new ItemPlaceable("seat.yellow", "color:item/seat_yellow", itemID++, ColorBlocks.seatYellow));
+
+		seatLime = new ItemBuilder(MOD_ID)
+			.build(new ItemPlaceable("seat.lime", "color:item/seat_lime", itemID++, ColorBlocks.seatLime));
+
+		seatGreen = new ItemBuilder(MOD_ID)
+			.build(new ItemPlaceable("seat.green", "color:item/seat_green", itemID++, ColorBlocks.seatGreen));
+
+		seatCyan = new ItemBuilder(MOD_ID)
+			.build(new ItemPlaceable("seat.cyan", "color:item/seat_cyan", itemID++, ColorBlocks.seatCyan));
+
+		seatLightblue = new ItemBuilder(MOD_ID)
+			.build(new ItemPlaceable("seat.lightblue", "color:item/seat_lightblue", itemID++, ColorBlocks.seatLightblue));
+
+		seatBlue = new ItemBuilder(MOD_ID)
+			.build(new ItemPlaceable("seat.blue", "color:item/seat_blue", itemID++, ColorBlocks.seatBlue));
+
+		seatPurple = new ItemBuilder(MOD_ID)
+			.build(new ItemPlaceable("seat.purple", "color:item/seat_purple", itemID++, ColorBlocks.seatPurple));
+
+		seatMagenta = new ItemBuilder(MOD_ID)
+			.build(new ItemPlaceable("seat.magenta", "color:item/seat_magenta", itemID++, ColorBlocks.seatMagenta));
+
+		seatPink = new ItemBuilder(MOD_ID)
+			.build(new ItemPlaceable("seat.pink", "color:item/seat_pink", itemID++, ColorBlocks.seatPink));
+
+		seatBrown = new ItemBuilder(MOD_ID)
+			.build(new ItemPlaceable("seat.brown", "color:item/seat_brown", itemID++, ColorBlocks.seatBrown));
+
+		seatWhite = new ItemBuilder(MOD_ID)
+			.build(new ItemPlaceable("seat.white", "color:item/seat_white", itemID++, ColorBlocks.seatWhite));
+
+		seatSilver = new ItemBuilder(MOD_ID)
+			.build(new ItemPlaceable("seat.silver", "color:item/seat_silver", itemID++, ColorBlocks.seatSilver));
+
+		seatGray = new ItemBuilder(MOD_ID)
+			.build(new ItemPlaceable("seat.gray", "color:item/seat_gray", itemID++, ColorBlocks.seatGray));
+
+		seatBlack = new ItemBuilder(MOD_ID)
+			.build(new ItemPlaceable("seat.black", "color:item/seat_black", itemID++, ColorBlocks.seatBlack));
 
 
 
