@@ -1,6 +1,9 @@
 package luke.color;
 
 import luke.color.blockmodel.*;
+import luke.color.entity.MobParrot;
+import luke.color.entity.MobRendererParrot;
+import luke.color.entity.ModelParrot;
 import net.minecraft.client.render.EntityRenderDispatcher;
 import net.minecraft.client.render.TileEntityRenderDispatcher;
 import net.minecraft.client.render.block.color.BlockColorDispatcher;
@@ -281,6 +284,8 @@ public class ColorModels implements ModelEntrypoint {
 
 	@Override
 	public void initEntityModels(EntityRenderDispatcher dispatcher) {
+		ModelHelper.setEntityModel(MobParrot.class, () -> new MobRendererParrot(new ModelParrot(), 0.2f));
+
 	}
 
 	@Override

@@ -1,7 +1,14 @@
 package luke.color;
 
 import luke.color.entity.ColorEntities;
+import luke.color.entity.MobParrot;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.client.gui.guidebook.mobs.MobInfoRegistry;
+import net.minecraft.core.entity.SpawnListEntry;
+import net.minecraft.core.enums.MobCategory;
+import net.minecraft.core.item.ItemStack;
+import net.minecraft.core.item.Items;
+import net.minecraft.core.world.biome.Biomes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.SoundHelper;
@@ -14,7 +21,7 @@ public class ColorMod implements ModInitializer, ClientStartEntrypoint, GameStar
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
     @Override
     public void onInitialize() {
-//		Biomes.OVERWORLD_RAINFOREST.getSpawnableList(EnumCreatureType.creature).add(new SpawnListEntry(MobParrot.class, 102));
+		Biomes.OVERWORLD_RAINFOREST.getSpawnableList(MobCategory.creature).add(new SpawnListEntry(MobParrot.class, 102));
 
 		SoundHelper.addSound(MOD_ID, "parrotidle1.ogg");
 		SoundHelper.addSound(MOD_ID, "parrotidle2.ogg");
@@ -39,6 +46,10 @@ public class ColorMod implements ModInitializer, ClientStartEntrypoint, GameStar
 	@Override
 	public void afterGameStart() {
 		new ColorBlocks().initializeBlockDetails();
+
+		MobInfoRegistry.register(MobParrot.class, "parrot.name", "parrot.desc",
+			10, 400, new MobInfoRegistry.MobDrop[]{new MobInfoRegistry.MobDrop(new ItemStack(Items.FEATHER_CHICKEN),
+				1.0f, 2, 4)});
 	}
 
 	@Override

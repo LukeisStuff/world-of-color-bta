@@ -200,3 +200,6 @@ item.color.seat.orange.name=Orange Seat
 item.color.seat.orange.desc=Sit down and relax, in orange.
 item.color.seat.white.name=White Seat
 item.color.seat.white.desc=Sit down and relax, in white.
+
+parrot.name=Parrot
+parrot.desc=Parrots are a great source of feathers, which are useful for arrows. They can be found in the rainforest, but never feed them a cookie.

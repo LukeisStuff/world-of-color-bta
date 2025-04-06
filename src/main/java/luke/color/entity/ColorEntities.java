@@ -1,9 +1,12 @@
 package luke.color.entity;
 
+import net.minecraft.core.util.collection.NamespaceID;
+import turniplabs.halplibe.helper.EntityHelper;
+
 public class ColorEntities {
-	public static int entityID = 120;
 
 	public void initializeEntities() {
-//		EntityHelper.createEntity(MobParrot.class, entityID++, "Parrot", () -> new ParrotRenderer(new ModelParrot(), 0.2f));
+		EntityHelper.createEntity(MobParrot.class, NamespaceID.getPermanent("color", "parrot"), "guidebook.section.mob.parrot.name");
+
 	}
 }
