@@ -5,6 +5,7 @@ import luke.color.block.BlockLogicPowder;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLogicBed;
 import net.minecraft.core.block.BlockLogicSeat;
+import net.minecraft.core.block.Blocks;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.enums.EnumDropCause;
@@ -16,6 +17,7 @@ import turniplabs.halplibe.helper.BlockBuilder;
 import turniplabs.halplibe.helper.CreativeHelper;
 
 import static luke.color.ColorMod.MOD_ID;
+import static net.minecraft.core.player.inventory.menu.MenuInventoryCreative.creativeItems;
 
 public class ColorBlocks {
 
@@ -60,10 +62,20 @@ public class ColorBlocks {
 
 	public void initializeBlockDetails() {
 
+		int i;
+		int j;
+		for(i = 0; i < Blocks.blocksList.length; ++i) {
+			if (i != ColorBlocks.concrete.id()) {
+					for(j = 1; j < 16; ++j) {
+						creativeItems.add(new ItemStack(ColorBlocks.concrete.id(), 1, j));
+					}
+				}
+			}
+
+
 		for (int color = 1; color < 17; color++) {
 			CreativeHelper.setParent(concrete, color - 1, concretePowder, 0);
 		}
-
 	}
 
 	public void initializeBlocks() {
@@ -72,7 +84,7 @@ public class ColorBlocks {
 			.setBlockSound(new BlockSound("step.sand", "step.sand", 1.0f, 0.8f))
 			.setHardness(0.5f)
 			.setResistance(0.5f)
-			.setTags(BlockTags.MINEABLE_BY_SHOVEL);
+			.setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.NOT_IN_CREATIVE_MENU);
 
 		BlockBuilder bed = new BlockBuilder(MOD_ID)
 			.setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
@@ -85,7 +97,7 @@ public class ColorBlocks {
 		concrete = new BlockBuilder(MOD_ID)
 			.setHardness(5.0f)
 			.setResistance(25.0f)
-			.setTags(BlockTags.MINEABLE_BY_PICKAXE)
+			.setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
 			.setBlockItem(block -> new ItemBlockPainted<>(block, false))
 			.build("concrete", "block/concrete", blockID++, b -> new BlockLogicConcrete(b));
 

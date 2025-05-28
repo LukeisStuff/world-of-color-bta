@@ -1,5 +1,6 @@
 package luke.color.entity;
 
+import luke.color.ColorMod;
 import net.minecraft.core.WeightedRandomLootObject;
 import net.minecraft.core.entity.animal.MobAnimal;
 import net.minecraft.core.entity.player.Player;
@@ -72,16 +73,19 @@ public class MobParrot extends MobAnimal {
 	public void causeFallDamage(float distance) {
 	}
 
+	@Override
 	public String getLivingSound() {
-		return "color.parrotidle";
+		return ColorMod.MOD_ID + ":mob.parrot.idle";
 	}
 
-	public String getHurtSound() {
-		return "color.parrothurt";
+	@Override
+	protected String getHurtSound() {
+		return ColorMod.MOD_ID + ":mob.parrot.hurt";
 	}
 
-	public String getDeathSound() {
-		return "color.parrotdeath";
+	@Override
+	protected String getDeathSound() {
+		return ColorMod.MOD_ID + ":mob.parrot.death";
 	}
 
 	public boolean isFavouriteItem(ItemStack itemStack) {

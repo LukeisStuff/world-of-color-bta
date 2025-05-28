@@ -24,6 +24,9 @@
 		"beforeGameStart": [
 			"luke.color.ColorMod"
 		],
+		"beforeClientStart": [
+			"luke.color.ColorMod"
+		],
 		"initModels": [
 			"luke.color.ColorModels"
 		],

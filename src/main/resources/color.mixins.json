@@ -4,6 +4,7 @@
   "package": "luke.color.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "MenuInventoryCreativeMixin"
   ],
   "client": [
   ],

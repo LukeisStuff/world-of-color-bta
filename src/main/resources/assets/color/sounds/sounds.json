@@ -1,0 +1,25 @@
+{
+  "mob.parrot.idle": {
+    "subtitle": "subtitles.mob.parrot.idle",
+    "sounds": [
+      "mob/parrot/idle1.ogg",
+      "mob/parrot/idle2.ogg",
+      "mob/parrot/idle3.ogg",
+      "mob/parrot/idle4.ogg"
+    ]
+  },
+  "mob.parrot.hurt": {
+    "subtitle": "subtitles.mob.parrot.hurt",
+    "sounds": [
+      "mob/parrot/hurt1.ogg",
+      "mob/parrot/hurt2.ogg"
+    ]
+  },
+  "mob.parrot.death": {
+    "subtitle": "subtitles.mob.parrot.death",
+    "sounds": [
+      "mob/parrot/death1.ogg",
+      "mob/parrot/death2.ogg"
+    ]
+  }
+}
