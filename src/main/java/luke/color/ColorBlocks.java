@@ -21,7 +21,7 @@ import static net.minecraft.core.player.inventory.menu.MenuInventoryCreative.cre
 
 public class ColorBlocks {
 
-	int blockID = 1200;
+	public static int blockID;
 
 	public static Block<?> concrete;
 

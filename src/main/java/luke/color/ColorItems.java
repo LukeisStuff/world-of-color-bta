@@ -9,7 +9,7 @@ import static luke.color.ColorMod.MOD_ID;
 
 public class ColorItems {
 
-	int itemID = 21200;
+	public static int itemID;
 
 	public static Item bedWhite;
 	public static Item bedOrange;

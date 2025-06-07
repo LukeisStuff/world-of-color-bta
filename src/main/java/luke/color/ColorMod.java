@@ -10,15 +10,30 @@ import net.minecraft.core.enums.MobCategory;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.Items;
 import net.minecraft.core.world.biome.Biomes;
+
+import java.util.Properties;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.util.ClientStartEntrypoint;
+import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.GameStartEntrypoint;
 
 
 public class ColorMod implements ModInitializer, ClientStartEntrypoint, GameStartEntrypoint {
     public static final String MOD_ID = "color";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+
+	public static final ConfigHandler config;
+	static {
+		Properties prop = new Properties();
+		prop.setProperty("starting_block_id", "1200");
+		prop.setProperty("starting_item_id", "21200");
+		config = new ConfigHandler(MOD_ID, prop);
+		ColorBlocks.blockID = config.getInt("starting_block_id");
+		ColorItems.itemID = config.getInt("starting_item_id");
+	}
+
     @Override
     public void onInitialize() {
 		Biomes.OVERWORLD_RAINFOREST.getSpawnableList(MobCategory.creature).add(new SpawnListEntry(MobParrot.class, 102));
