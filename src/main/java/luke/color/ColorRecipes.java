@@ -13,24 +13,19 @@ public class ColorRecipes implements RecipeEntrypoint {
 
 	public void initializeRecipes() {
 
-
-			RecipeBuilderShaped templatePowder = new RecipeBuilderShaped(MOD_ID, "DSS", "SSG", "GGG");
-			templatePowder.addInput('D', (new ItemStack(Items.DYE, 1, 15))).addInput('S', (Blocks.SAND)).addInput('G', (Blocks.GRAVEL)).create("concrete_powder_white", new ItemStack(ColorBlocks.concretePowder, 8, 0));
-			templatePowder.addInput('D', (new ItemStack(Items.DYE, 1, 14))).addInput('S', (Blocks.SAND)).addInput('G', (Blocks.GRAVEL)).create("concrete_powder_orange", new ItemStack(ColorBlocks.concretePowder, 8, 1));
-			templatePowder.addInput('D', (new ItemStack(Items.DYE, 1, 13))).addInput('S', (Blocks.SAND)).addInput('G', (Blocks.GRAVEL)).create("concrete_powder_magenta", new ItemStack(ColorBlocks.concretePowder, 8, 2));
-			templatePowder.addInput('D', (new ItemStack(Items.DYE, 1, 12))).addInput('S', (Blocks.SAND)).addInput('G', (Blocks.GRAVEL)).create("concrete_powder_lightblue", new ItemStack(ColorBlocks.concretePowder, 8, 3));
-			templatePowder.addInput('D', (new ItemStack(Items.DYE, 1, 11))).addInput('S', (Blocks.SAND)).addInput('G', (Blocks.GRAVEL)).create("concrete_powder_yellow", new ItemStack(ColorBlocks.concretePowder, 8, 4));
-			templatePowder.addInput('D', (new ItemStack(Items.DYE, 1, 10))).addInput('S', (Blocks.SAND)).addInput('G', (Blocks.GRAVEL)).create("concrete_powder_lime", new ItemStack(ColorBlocks.concretePowder, 8, 5));
-			templatePowder.addInput('D', (new ItemStack(Items.DYE, 1, 9))).addInput('S', (Blocks.SAND)).addInput('G', (Blocks.GRAVEL)).create("concrete_powder_pink", new ItemStack(ColorBlocks.concretePowder, 8, 6));
-			templatePowder.addInput('D', (new ItemStack(Items.DYE, 1, 8))).addInput('S', (Blocks.SAND)).addInput('G', (Blocks.GRAVEL)).create("concrete_powder_gray", new ItemStack(ColorBlocks.concretePowder, 8, 7));
-			templatePowder.addInput('D', (new ItemStack(Items.DYE, 1, 7))).addInput('S', (Blocks.SAND)).addInput('G', (Blocks.GRAVEL)).create("concrete_powder_silver", new ItemStack(ColorBlocks.concretePowder, 8, 8));
-			templatePowder.addInput('D', (new ItemStack(Items.DYE, 1, 6))).addInput('S', (Blocks.SAND)).addInput('G', (Blocks.GRAVEL)).create("concrete_powder_cyan", new ItemStack(ColorBlocks.concretePowder, 8, 9));
-			templatePowder.addInput('D', (new ItemStack(Items.DYE, 1, 5))).addInput('S', (Blocks.SAND)).addInput('G', (Blocks.GRAVEL)).create("concrete_powder_purple", new ItemStack(ColorBlocks.concretePowder, 8, 10));
-			templatePowder.addInput('D', (new ItemStack(Items.DYE, 1, 4))).addInput('S', (Blocks.SAND)).addInput('G', (Blocks.GRAVEL)).create("concrete_powder_blue", new ItemStack(ColorBlocks.concretePowder, 8, 11));
-			templatePowder.addInput('D', (new ItemStack(Items.DYE, 1, 3))).addInput('S', (Blocks.SAND)).addInput('G', (Blocks.GRAVEL)).create("concrete_powder_brown", new ItemStack(ColorBlocks.concretePowder, 8, 12));
-			templatePowder.addInput('D', (new ItemStack(Items.DYE, 1, 2))).addInput('S', (Blocks.SAND)).addInput('G', (Blocks.GRAVEL)).create("concrete_powder_green", new ItemStack(ColorBlocks.concretePowder, 8, 13));
-			templatePowder.addInput('D', (new ItemStack(Items.DYE, 1, 1))).addInput('S', (Blocks.SAND)).addInput('G', (Blocks.GRAVEL)).create("concrete_powder_red", new ItemStack(ColorBlocks.concretePowder, 8, 14));
-			templatePowder.addInput('D', (new ItemStack(Items.DYE, 1, 0))).addInput('S', (Blocks.SAND)).addInput('G', (Blocks.GRAVEL)).create("concrete_powder_black", new ItemStack(ColorBlocks.concretePowder, 8, 15));
+		for (int color = 0; color < 16; color++) {
+			RecipeBuilder.Shapeless(MOD_ID)
+				.addInput(Blocks.SAND)
+				.addInput(Blocks.SAND)
+				.addInput(Blocks.SAND)
+				.addInput(Blocks.SAND)
+				.addInput(Blocks.GRAVEL)
+				.addInput(Blocks.GRAVEL)
+				.addInput(Blocks.GRAVEL)
+				.addInput(Blocks.GRAVEL)
+				.addInput(new ItemStack(Items.DYE, 1, 15 - color))
+				.create("concrete_powder", new ItemStack(ColorBlocks.concretePowder, 8, color));
+		}
 
 		RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("bed");
 		RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("seat");
