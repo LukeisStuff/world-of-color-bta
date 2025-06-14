@@ -1,6 +1,7 @@
 package luke.color;
 
 import net.minecraft.core.block.Blocks;
+import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.Items;
 import turniplabs.halplibe.helper.RecipeBuilder;
@@ -25,7 +26,12 @@ public class ColorRecipes implements RecipeEntrypoint {
 				.addInput(Blocks.GRAVEL)
 				.addInput(new ItemStack(Items.DYE, 1, 15 - color))
 				.create("concrete_powder", new ItemStack(ColorBlocks.concretePowder, 8, color));
-		}
+
+		RecipeBuilder.Shaped(MOD_ID, "CCC", "CDC", "CCC")
+			.addInput('D', new ItemStack(Items.DYE, 1, 15 - color))
+			.addInput('C', ("color:block/concrete_powder"))
+			.create("concrete_powder_redye", new ItemStack(ColorBlocks.concretePowder, 8, color));
+	}
 
 		RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("bed");
 		RecipeBuilder.ModifyWorkbench("minecraft").removeRecipe("seat");
@@ -78,6 +84,25 @@ public class ColorRecipes implements RecipeEntrypoint {
 
 	@Override
 	public void initNamespaces() {
+
+		Registries.ITEM_GROUPS.register("color:block/concrete_powder", Registries.stackListOf(
+			new ItemStack(ColorBlocks.concretePowder, 1, 1),
+			new ItemStack(ColorBlocks.concretePowder, 1, 2),
+			new ItemStack(ColorBlocks.concretePowder, 1, 3),
+			new ItemStack(ColorBlocks.concretePowder, 1, 4),
+			new ItemStack(ColorBlocks.concretePowder, 1, 5),
+			new ItemStack(ColorBlocks.concretePowder, 1, 6),
+			new ItemStack(ColorBlocks.concretePowder, 1, 7),
+			new ItemStack(ColorBlocks.concretePowder, 1, 8),
+			new ItemStack(ColorBlocks.concretePowder, 1, 9),
+			new ItemStack(ColorBlocks.concretePowder, 1, 10),
+			new ItemStack(ColorBlocks.concretePowder, 1, 11),
+			new ItemStack(ColorBlocks.concretePowder, 1, 12),
+			new ItemStack(ColorBlocks.concretePowder, 1, 13),
+			new ItemStack(ColorBlocks.concretePowder, 1, 14),
+			new ItemStack(ColorBlocks.concretePowder, 1, 15),
+			new ItemStack(ColorBlocks.concretePowder, 1, 0)));
+
 			RecipeBuilder.initNameSpace(MOD_ID);
 			RecipeBuilder.getRecipeNamespace(MOD_ID);
 		}
