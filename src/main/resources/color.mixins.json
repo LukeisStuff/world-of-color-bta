@@ -6,6 +6,7 @@
   "package": "luke.color.mixin",
   "compatibilityLevel": "JAVA_${java}",
   "mixins": [
+    "BiomeRainforestSpawnListMixin",
     "MenuInventoryCreativeMixin"
   ],
   "client": [

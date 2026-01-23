@@ -1,6 +1,5 @@
 package luke.color.block;
 
-import luke.color.ColorBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLogicSand;
 import net.minecraft.core.block.IPainted;

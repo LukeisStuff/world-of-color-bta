@@ -1,5 +1,7 @@
 package luke.color;
 
+import luke.color.block.ColorBlocks;
+import luke.color.item.ColorItems;
 import net.minecraft.core.block.Blocks;
 import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.item.ItemStack;

@@ -1,10 +1,8 @@
-package luke.color;
+package luke.color.block;
 
-import luke.color.block.BlockLogicBedColored;
-import luke.color.block.BlockLogicConcrete;
-import luke.color.block.BlockLogicConcreteGlazed;
-import luke.color.block.BlockLogicPowder;
+import luke.color.item.ColorItems;
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.block.ItemBlockPainted;
@@ -17,9 +15,7 @@ import static luke.color.ColorMod.MOD_ID;
 public class ColorBlocks {
 
     public static Block<?> CONCRETE;
-
     public static Block<?> CONCRETE_POWDER;
-
     public static Block<?> CONCRETE_GLAZED;
 
     public static Block<?> BED_WHITE;
@@ -68,7 +64,7 @@ public class ColorBlocks {
         CONCRETE = new BlockBuilder(MOD_ID)
             .setHardness(5.0f)
             .setResistance(25.0f)
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .setBlockItem(block -> new ItemBlockPainted<>(block, false))
             .build("concrete", "concrete", blockID("CONCRETE"), BlockLogicConcrete::new);
 
@@ -76,17 +72,16 @@ public class ColorBlocks {
             .setBlockSound(new BlockSound("step.sand", "step.sand", 1.0f, 0.8f))
             .setHardness(0.5f)
             .setResistance(0.5f)
-            .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.NOT_IN_CREATIVE_MENU)
+            .setTags(BlockTags.MINEABLE_BY_SHOVEL)
             .setBlockItem(block -> new ItemBlockPainted<>(block, false))
             .build("concrete.powder", "concrete_powder", blockID("CONCRETE_POWDER"), BlockLogicPowder::new);
 
         CONCRETE_GLAZED = new BlockBuilder(MOD_ID)
             .setHardness(5.0f)
             .setResistance(25.0f)
-            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .setBlockItem(block -> new ItemBlockPainted<>(block, true))
-            .build("concrete.glazed", "concrete_glazed", blockID("CONCRETE_GLAZED"), BlockLogicConcreteGlazed::new);
-
+            .build("concrete.glazed", "concrete_glazed", blockID("CONCRETE_GLAZED"), block -> new BlockLogicConcreteGlazed(block, Material.stone));
 
         BlockBuilder bedBuilder = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))

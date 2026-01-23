@@ -1,6 +1,6 @@
-package luke.color;
+package luke.color.item;
 
-import luke.color.item.ItemColorBed;
+import luke.color.block.ColorBlocks;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemPlaceable;
 import turniplabs.halplibe.helper.ItemBuilder;

@@ -1,11 +1,10 @@
-package luke.color;
+package luke.color.model;
 
-import luke.color.model.BlockModelBedColored;
-import luke.color.model.BlockModelConcrete;
-import luke.color.model.BlockModelGlazedConcrete;
+import luke.color.block.ColorBlocks;
 import luke.color.entity.MobParrot;
 import luke.color.entity.MobRendererParrot;
 import luke.color.entity.ModelParrot;
+import luke.color.item.ColorItems;
 import net.minecraft.client.render.EntityRenderDispatcher;
 import net.minecraft.client.render.TileEntityRenderDispatcher;
 import net.minecraft.client.render.block.color.BlockColorDispatcher;
@@ -18,103 +17,103 @@ import net.minecraft.core.util.helper.Side;
 import turniplabs.halplibe.helper.ModelHelper;
 import turniplabs.halplibe.util.ModelEntrypoint;
 
-import static luke.color.ColorBlocks.*;
+import static luke.color.block.ColorBlocks.*;
 
 public class ColorModels implements ModelEntrypoint {
     @Override
     public void initBlockModels(BlockModelDispatcher dispatcher) {
-        ModelHelper.setBlockModel(CONCRETE, () -> new BlockModelConcrete<>(CONCRETE, "concrete"));
-        ModelHelper.setBlockModel(CONCRETE_POWDER, () -> new BlockModelConcrete<>(CONCRETE_POWDER, "concrete_powder"));
+        dispatcher.addDispatch(CONCRETE, new BlockModelConcrete<>(CONCRETE, "concrete"));
+        dispatcher.addDispatch(CONCRETE_POWDER, new BlockModelConcrete<>(CONCRETE_POWDER, "concrete_powder"));
         ModelHelper.setBlockModel(CONCRETE_GLAZED, () -> new BlockModelGlazedConcrete<>(CONCRETE_GLAZED));
 
-        ModelHelper.setBlockModel(BED_WHITE, () -> new BlockModelBedColored<>(BED_WHITE, DyeColor.WHITE));
-        ModelHelper.setBlockModel(BED_ORANGE, () -> new BlockModelBedColored<>(BED_ORANGE, DyeColor.ORANGE));
-        ModelHelper.setBlockModel(BED_MAGENTA, () -> new BlockModelBedColored<>(BED_MAGENTA, DyeColor.MAGENTA));
-        ModelHelper.setBlockModel(BED_YELLOW, () -> new BlockModelBedColored<>(BED_YELLOW, DyeColor.YELLOW));
-        ModelHelper.setBlockModel(BED_SILVER, () -> new BlockModelBedColored<>(BED_SILVER, DyeColor.SILVER));
-        ModelHelper.setBlockModel(BED_PURPLE, () -> new BlockModelBedColored<>(BED_PURPLE, DyeColor.PURPLE));
-        ModelHelper.setBlockModel(BED_PINK, () -> new BlockModelBedColored<>(BED_PINK, DyeColor.PINK));
-        ModelHelper.setBlockModel(BED_LIME, () -> new BlockModelBedColored<>(BED_LIME, DyeColor.LIME));
-        ModelHelper.setBlockModel(BED_LIGHTBLUE, () -> new BlockModelBedColored<>(BED_LIGHTBLUE, DyeColor.LIGHT_BLUE));
-        ModelHelper.setBlockModel(BED_GREEN, () -> new BlockModelBedColored<>(BED_GREEN, DyeColor.GREEN));
-        ModelHelper.setBlockModel(BED_GRAY, () -> new BlockModelBedColored<>(BED_GRAY, DyeColor.GRAY));
-        ModelHelper.setBlockModel(BED_CYAN, () -> new BlockModelBedColored<>(BED_CYAN, DyeColor.CYAN));
-        ModelHelper.setBlockModel(BED_BLACK, () -> new BlockModelBedColored<>(BED_BLACK, DyeColor.BLACK));
-        ModelHelper.setBlockModel(BED_BLUE, () -> new BlockModelBedColored<>(BED_BLUE, DyeColor.BLUE));
-        ModelHelper.setBlockModel(BED_BROWN, () -> new BlockModelBedColored<>(BED_BROWN, DyeColor.BROWN));
+        dispatcher.addDispatch(BED_WHITE, new BlockModelBedColored<>(BED_WHITE, DyeColor.WHITE));
+        dispatcher.addDispatch(BED_ORANGE, new BlockModelBedColored<>(BED_ORANGE, DyeColor.ORANGE));
+        dispatcher.addDispatch(BED_MAGENTA, new BlockModelBedColored<>(BED_MAGENTA, DyeColor.MAGENTA));
+        dispatcher.addDispatch(BED_YELLOW, new BlockModelBedColored<>(BED_YELLOW, DyeColor.YELLOW));
+        dispatcher.addDispatch(BED_SILVER, new BlockModelBedColored<>(BED_SILVER, DyeColor.SILVER));
+        dispatcher.addDispatch(BED_PURPLE, new BlockModelBedColored<>(BED_PURPLE, DyeColor.PURPLE));
+        dispatcher.addDispatch(BED_PINK, new BlockModelBedColored<>(BED_PINK, DyeColor.PINK));
+        dispatcher.addDispatch(BED_LIME, new BlockModelBedColored<>(BED_LIME, DyeColor.LIME));
+        dispatcher.addDispatch(BED_LIGHTBLUE, new BlockModelBedColored<>(BED_LIGHTBLUE, DyeColor.LIGHT_BLUE));
+        dispatcher.addDispatch(BED_GREEN, new BlockModelBedColored<>(BED_GREEN, DyeColor.GREEN));
+        dispatcher.addDispatch(BED_GRAY, new BlockModelBedColored<>(BED_GRAY, DyeColor.GRAY));
+        dispatcher.addDispatch(BED_CYAN, new BlockModelBedColored<>(BED_CYAN, DyeColor.CYAN));
+        dispatcher.addDispatch(BED_BLACK, new BlockModelBedColored<>(BED_BLACK, DyeColor.BLACK));
+        dispatcher.addDispatch(BED_BLUE, new BlockModelBedColored<>(BED_BLUE, DyeColor.BLUE));
+        dispatcher.addDispatch(BED_BROWN, new BlockModelBedColored<>(BED_BROWN, DyeColor.BROWN));
 
 
-        ModelHelper.setBlockModel(ColorBlocks.SEAT_WHITE, () -> new BlockModelSeat<>(ColorBlocks.SEAT_WHITE)
+        dispatcher.addDispatch(ColorBlocks.SEAT_WHITE, new BlockModelSeat<>(ColorBlocks.SEAT_WHITE)
             .setTex(0, "color:block/seat/seat_white_top", Side.TOP)
             .setTex(0, "minecraft:block/seat/bottom", Side.BOTTOM)
             .setTex(0, "color:block/bed/bed_white_foot_front", Side.NORTH, Side.EAST, Side.SOUTH, Side.WEST));
 
-        ModelHelper.setBlockModel(ColorBlocks.SEAT_ORANGE, () -> new BlockModelSeat<>(ColorBlocks.SEAT_ORANGE)
+        dispatcher.addDispatch(ColorBlocks.SEAT_ORANGE, new BlockModelSeat<>(ColorBlocks.SEAT_ORANGE)
             .setTex(0, "color:block/seat/seat_orange_top", Side.TOP)
             .setTex(0, "minecraft:block/seat/bottom", Side.BOTTOM)
             .setTex(0, "color:block/bed/bed_orange_foot_front", Side.NORTH, Side.EAST, Side.SOUTH, Side.WEST));
 
-        ModelHelper.setBlockModel(ColorBlocks.SEAT_MAGENTA, () -> new BlockModelSeat<>(ColorBlocks.SEAT_MAGENTA)
+        dispatcher.addDispatch(ColorBlocks.SEAT_MAGENTA, new BlockModelSeat<>(ColorBlocks.SEAT_MAGENTA)
             .setTex(0, "color:block/seat/seat_magenta_top", Side.TOP)
             .setTex(0, "minecraft:block/seat/bottom", Side.BOTTOM)
             .setTex(0, "color:block/bed/bed_magenta_foot_front", Side.NORTH, Side.EAST, Side.SOUTH, Side.WEST));
 
-        ModelHelper.setBlockModel(ColorBlocks.SEAT_LIGHTBLUE, () -> new BlockModelSeat<>(ColorBlocks.SEAT_LIGHTBLUE)
+        dispatcher.addDispatch(ColorBlocks.SEAT_LIGHTBLUE, new BlockModelSeat<>(ColorBlocks.SEAT_LIGHTBLUE)
             .setTex(0, "color:block/seat/seat_lightblue_top", Side.TOP)
             .setTex(0, "minecraft:block/seat/bottom", Side.BOTTOM)
             .setTex(0, "color:block/bed/bed_lightblue_foot_front", Side.NORTH, Side.EAST, Side.SOUTH, Side.WEST));
 
-        ModelHelper.setBlockModel(ColorBlocks.SEAT_YELLOW, () -> new BlockModelSeat<>(ColorBlocks.SEAT_YELLOW)
+        dispatcher.addDispatch(ColorBlocks.SEAT_YELLOW, new BlockModelSeat<>(ColorBlocks.SEAT_YELLOW)
             .setTex(0, "color:block/seat/seat_yellow_top", Side.TOP)
             .setTex(0, "minecraft:block/seat/bottom", Side.BOTTOM)
             .setTex(0, "color:block/bed/bed_yellow_foot_front", Side.NORTH, Side.EAST, Side.SOUTH, Side.WEST));
 
-        ModelHelper.setBlockModel(ColorBlocks.SEAT_LIME, () -> new BlockModelSeat<>(ColorBlocks.SEAT_LIME)
+        dispatcher.addDispatch(ColorBlocks.SEAT_LIME, new BlockModelSeat<>(ColorBlocks.SEAT_LIME)
             .setTex(0, "color:block/seat/seat_lime_top", Side.TOP)
             .setTex(0, "minecraft:block/seat/bottom", Side.BOTTOM)
             .setTex(0, "color:block/bed/bed_lime_foot_front", Side.NORTH, Side.EAST, Side.SOUTH, Side.WEST));
 
-        ModelHelper.setBlockModel(ColorBlocks.SEAT_PINK, () -> new BlockModelSeat<>(ColorBlocks.SEAT_PINK)
+        dispatcher.addDispatch(ColorBlocks.SEAT_PINK, new BlockModelSeat<>(ColorBlocks.SEAT_PINK)
             .setTex(0, "color:block/seat/seat_pink_top", Side.TOP)
             .setTex(0, "minecraft:block/seat/bottom", Side.BOTTOM)
             .setTex(0, "color:block/bed/bed_pink_foot_front", Side.NORTH, Side.EAST, Side.SOUTH, Side.WEST));
 
-        ModelHelper.setBlockModel(ColorBlocks.SEAT_GRAY, () -> new BlockModelSeat<>(ColorBlocks.SEAT_GRAY)
+        dispatcher.addDispatch(ColorBlocks.SEAT_GRAY, new BlockModelSeat<>(ColorBlocks.SEAT_GRAY)
             .setTex(0, "color:block/seat/seat_gray_top", Side.TOP)
             .setTex(0, "minecraft:block/seat/bottom", Side.BOTTOM)
             .setTex(0, "color:block/bed/bed_gray_foot_front", Side.NORTH, Side.EAST, Side.SOUTH, Side.WEST));
 
-        ModelHelper.setBlockModel(ColorBlocks.SEAT_SILVER, () -> new BlockModelSeat<>(ColorBlocks.SEAT_SILVER)
+        dispatcher.addDispatch(ColorBlocks.SEAT_SILVER, new BlockModelSeat<>(ColorBlocks.SEAT_SILVER)
             .setTex(0, "color:block/seat/seat_silver_top", Side.TOP)
             .setTex(0, "minecraft:block/seat/bottom", Side.BOTTOM)
             .setTex(0, "color:block/bed/bed_silver_foot_front", Side.NORTH, Side.EAST, Side.SOUTH, Side.WEST));
 
-        ModelHelper.setBlockModel(ColorBlocks.SEAT_CYAN, () -> new BlockModelSeat<>(ColorBlocks.SEAT_CYAN)
+        dispatcher.addDispatch(ColorBlocks.SEAT_CYAN, new BlockModelSeat<>(ColorBlocks.SEAT_CYAN)
             .setTex(0, "color:block/seat/seat_cyan_top", Side.TOP)
             .setTex(0, "minecraft:block/seat/bottom", Side.BOTTOM)
             .setTex(0, "color:block/bed/bed_cyan_foot_front", Side.NORTH, Side.EAST, Side.SOUTH, Side.WEST));
 
-        ModelHelper.setBlockModel(ColorBlocks.SEAT_PURPLE, () -> new BlockModelSeat<>(ColorBlocks.SEAT_PURPLE)
+        dispatcher.addDispatch(ColorBlocks.SEAT_PURPLE, new BlockModelSeat<>(ColorBlocks.SEAT_PURPLE)
             .setTex(0, "color:block/seat/seat_purple_top", Side.TOP)
             .setTex(0, "minecraft:block/seat/bottom", Side.BOTTOM)
             .setTex(0, "color:block/bed/bed_purple_foot_front", Side.NORTH, Side.EAST, Side.SOUTH, Side.WEST));
 
-        ModelHelper.setBlockModel(ColorBlocks.SEAT_BLUE, () -> new BlockModelSeat<>(ColorBlocks.SEAT_BLUE)
+        dispatcher.addDispatch(ColorBlocks.SEAT_BLUE, new BlockModelSeat<>(ColorBlocks.SEAT_BLUE)
             .setTex(0, "color:block/seat/seat_blue_top", Side.TOP)
             .setTex(0, "minecraft:block/seat/bottom", Side.BOTTOM)
             .setTex(0, "color:block/bed/bed_blue_foot_front", Side.NORTH, Side.EAST, Side.SOUTH, Side.WEST));
 
-        ModelHelper.setBlockModel(ColorBlocks.SEAT_BROWN, () -> new BlockModelSeat<>(ColorBlocks.SEAT_BROWN)
+        dispatcher.addDispatch(ColorBlocks.SEAT_BROWN, new BlockModelSeat<>(ColorBlocks.SEAT_BROWN)
             .setTex(0, "color:block/seat/seat_brown_top", Side.TOP)
             .setTex(0, "minecraft:block/seat/bottom", Side.BOTTOM)
             .setTex(0, "color:block/bed/bed_brown_foot_front", Side.NORTH, Side.EAST, Side.SOUTH, Side.WEST));
 
-        ModelHelper.setBlockModel(ColorBlocks.SEAT_GREEN, () -> new BlockModelSeat<>(ColorBlocks.SEAT_GREEN)
+        dispatcher.addDispatch(ColorBlocks.SEAT_GREEN, new BlockModelSeat<>(ColorBlocks.SEAT_GREEN)
             .setTex(0, "color:block/seat/seat_green_top", Side.TOP)
             .setTex(0, "minecraft:block/seat/bottom", Side.BOTTOM)
             .setTex(0, "color:block/bed/bed_green_foot_front", Side.NORTH, Side.EAST, Side.SOUTH, Side.WEST));
 
-        ModelHelper.setBlockModel(ColorBlocks.SEAT_BLACK, () -> new BlockModelSeat<>(ColorBlocks.SEAT_BLACK)
+        dispatcher.addDispatch(ColorBlocks.SEAT_BLACK, new BlockModelSeat<>(ColorBlocks.SEAT_BLACK)
             .setTex(0, "color:block/seat/seat_black_top", Side.TOP)
             .setTex(0, "minecraft:block/seat/bottom", Side.BOTTOM)
             .setTex(0, "color:block/bed/bed_black_foot_front", Side.NORTH, Side.EAST, Side.SOUTH, Side.WEST));

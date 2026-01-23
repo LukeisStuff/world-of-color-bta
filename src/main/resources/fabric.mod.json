@@ -25,9 +25,12 @@
       "luke.color.ColorMod"
     ],
     "initModels": [
-      "luke.color.ColorModels"
+      "luke.color.model.ColorModels"
     ],
     "afterGameStart": [
+      "luke.color.ColorMod"
+    ],
+    "afterClientStart": [
       "luke.color.ColorMod"
     ],
     "recipesReady": [

@@ -1,7 +1,9 @@
 package luke.color;
 
+import luke.color.block.ColorBlocks;
 import luke.color.entity.ColorEntities;
 import luke.color.entity.MobParrot;
+import luke.color.item.ColorItems;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.gui.guidebook.mobs.MobInfoRegistry;
 import net.minecraft.client.sound.SoundRepository;
@@ -35,8 +37,6 @@ public class ColorMod implements ModInitializer, ClientStartEntrypoint, GameStar
 
     @Override
     public void afterGameStart() {
-        MobInfoRegistry.register(MobParrot.class, "parrot.name", "parrot.desc", 10, 400,
-            new MobInfoRegistry.MobDrop[]{new MobInfoRegistry.MobDrop(new ItemStack(Items.FEATHER_CHICKEN), 1.0f, 2, 4)});
     }
 
     @Override
@@ -46,6 +46,7 @@ public class ColorMod implements ModInitializer, ClientStartEntrypoint, GameStar
 
     @Override
     public void afterClientStart() {
-
+        MobInfoRegistry.register(MobParrot.class, "parrot.name", "parrot.desc", 10, 400,
+            new MobInfoRegistry.MobDrop[]{new MobInfoRegistry.MobDrop(new ItemStack(Items.FEATHER_CHICKEN), 1.0f, 2, 4)});
     }
 }

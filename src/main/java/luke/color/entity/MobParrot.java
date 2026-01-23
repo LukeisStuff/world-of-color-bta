@@ -35,7 +35,8 @@ public class MobParrot extends MobAnimal {
         ItemStack itemstack = entityplayer.inventory.getCurrentItem();
         if (itemstack != null && itemstack.itemID == Items.FOOD_COOKIE.id) {
             itemstack.consumeItem(entityplayer);
-            this.damageEntity(10, DamageType.COMBAT);
+            this.damageEntity(10, DamageType.GENERIC);
+            this.playDeathSound();
             return true;
         }
         return super.interact(entityplayer);
