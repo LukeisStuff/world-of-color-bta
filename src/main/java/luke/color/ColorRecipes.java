@@ -10,7 +10,6 @@ import net.minecraft.core.data.registry.recipe.entry.RecipeEntryUndyeing;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.Items;
 import net.minecraft.core.util.helper.DyeColor;
-import teamport.aether.AetherMod;
 import turniplabs.halplibe.helper.RecipeBuilder;
 import turniplabs.halplibe.helper.recipeBuilders.RecipeBuilderShaped;
 import turniplabs.halplibe.util.RecipeEntrypoint;
@@ -80,13 +79,13 @@ public class ColorRecipes implements RecipeEntrypoint {
         for (int color = 0; color < 16; color++) {
             String colorName = DyeColor.values()[color].name().toLowerCase();
 
-            RecipeBuilder.Furnace(AetherMod.MOD_ID)
+            RecipeBuilder.Furnace(MOD_ID)
                 .setInput(new ItemStack(ColorBlocks.CONCRETE, 1, color))
                 .create(
                     colorName + "_concrete_to_" + colorName + "_glazed_concrete",
                     new ItemStack(ColorBlocks.CONCRETE_GLAZED, 1, color * 16));
 
-            RecipeBuilder.BlastFurnace(AetherMod.MOD_ID)
+            RecipeBuilder.BlastFurnace(MOD_ID)
                 .setInput(new ItemStack(ColorBlocks.CONCRETE, 1, color))
                 .create(
                     colorName + "_concrete_to_" + colorName + "_glazed_concrete",

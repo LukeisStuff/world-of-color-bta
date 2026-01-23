@@ -35,7 +35,7 @@ public class BlockLogicConcrete extends BlockLogic implements IPainted {
             ItemStack drop = new ItemStack(this.crushDrop.get(), 1, meta & 15);
             return new ItemStack[]{drop};
         }
-        return super.getBreakResult(world, dropCause, meta, tileEntity);
+        return new ItemStack[]{new ItemStack(this, 1, meta)};
     }
 
     public DyeColor fromMetadata(int meta) {

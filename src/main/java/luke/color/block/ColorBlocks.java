@@ -2,6 +2,7 @@ package luke.color.block;
 
 import luke.color.item.ColorItems;
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.IPainted;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.item.ItemStack;
@@ -14,9 +15,9 @@ import static luke.color.ColorMod.MOD_ID;
 
 public class ColorBlocks {
 
-    public static Block<?> CONCRETE;
-    public static Block<?> CONCRETE_POWDER;
-    public static Block<?> CONCRETE_GLAZED;
+    public static Block<? extends IPainted> CONCRETE;
+    public static Block<? extends IPainted> CONCRETE_POWDER;
+    public static Block<? extends IPainted> CONCRETE_GLAZED;
 
     public static Block<?> BED_WHITE;
     public static Block<?> BED_ORANGE;
