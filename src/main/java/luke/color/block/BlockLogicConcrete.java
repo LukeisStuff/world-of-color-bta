@@ -15,31 +15,31 @@ import org.jetbrains.annotations.Nullable;
 
 public class BlockLogicConcrete extends BlockLogic implements IPainted {
 
-	public BlockLogicConcrete(Block<?> block) {
-		super(block, Material.stone);
-	}
+    public BlockLogicConcrete(Block<?> block) {
+        super(block, Material.stone);
+    }
 
-	public int getPlacedBlockMetadata(@Nullable Player player, ItemStack stack, World world, int x, int y, int z, Side side, double xPlaced, double yPlaced) {
-		return stack.getMetadata() & 15;
-	}
+    public int getPlacedBlockMetadata(@Nullable Player player, ItemStack stack, World world, int x, int y, int z, Side side, double xPlaced, double yPlaced) {
+        return stack.getMetadata() & 15;
+    }
 
-	public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int meta, TileEntity tileEntity) {
-		return new ItemStack[]{new ItemStack(this, 1, meta)};
-	}
+    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int meta, TileEntity tileEntity) {
+        return new ItemStack[]{new ItemStack(this, 1, meta)};
+    }
 
-	public DyeColor fromMetadata(int meta) {
-		return DyeColor.colorFromBlockMeta(meta);
-	}
+    public DyeColor fromMetadata(int meta) {
+        return DyeColor.colorFromBlockMeta(meta);
+    }
 
-	public int toMetadata(DyeColor color) {
-		return color.blockMeta;
-	}
+    public int toMetadata(DyeColor color) {
+        return color.blockMeta;
+    }
 
-	public int stripColorFromMetadata(int meta) {
-		return 0;
-	}
+    public int stripColorFromMetadata(int meta) {
+        return 0;
+    }
 
-	public void removeDye(World world, int x, int y, int z) {
-		world.setBlockMetadataWithNotify(x, y, z, 0);
-	}
+    public void removeDye(World world, int x, int y, int z) {
+        world.setBlockMetadataWithNotify(x, y, z, 0);
+    }
 }

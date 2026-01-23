@@ -64,6 +64,39 @@ tile.color.concrete.orange.desc=Hardened rock mass, stained orange.
 tile.color.concrete.white.name=White Concrete
 tile.color.concrete.white.desc=Hardened rock mass, stained white.
 
+tile.color.concrete.glazed.black.name=Black Glazed Concrete
+tile.color.concrete.glazed.black.desc=Concrete baked and shaped, stained black
+tile.color.concrete.glazed.red.name=Red Glazed Concrete
+tile.color.concrete.glazed.red.desc=Concrete baked and shaped, stained red.
+tile.color.concrete.glazed.green.name=Green Glazed Concrete
+tile.color.concrete.glazed.green.desc=Concrete baked and shaped, stained green.
+tile.color.concrete.glazed.brown.name=Brown Glazed Concrete
+tile.color.concrete.glazed.brown.desc=Concrete baked and shaped, stained brown.
+tile.color.concrete.glazed.blue.name=Blue Glazed Concrete
+tile.color.concrete.glazed.blue.desc=Concrete baked and shaped, stained blue.
+tile.color.concrete.glazed.purple.name=Purple Glazed Concrete
+tile.color.concrete.glazed.purple.desc=Concrete baked and shaped, stained purple.
+tile.color.concrete.glazed.cyan.name=Cyan Glazed Concrete
+tile.color.concrete.glazed.cyan.desc=Concrete baked and shaped, stained cyan.
+tile.color.concrete.glazed.silver.name=Light Gray Glazed Concrete
+tile.color.concrete.glazed.silver.desc=Concrete baked and shaped, stained light gray.
+tile.color.concrete.glazed.gray.name=Gray Glazed Concrete
+tile.color.concrete.glazed.gray.desc=Concrete baked and shaped, stained gray.
+tile.color.concrete.glazed.pink.name=Pink Glazed Concrete
+tile.color.concrete.glazed.pink.desc=Concrete baked and shaped, stained pink.
+tile.color.concrete.glazed.lime.name=Lime Glazed Concrete
+tile.color.concrete.glazed.lime.desc=Concrete baked and shaped, stained lime.
+tile.color.concrete.glazed.yellow.name=Yellow Glazed Concrete
+tile.color.concrete.glazed.yellow.desc=Concrete baked and shaped, stained yellow.
+tile.color.concrete.glazed.lightblue.name=Light Blue Glazed Concrete
+tile.color.concrete.glazed.lightblue.desc=Concrete baked and shaped, stained light blue.
+tile.color.concrete.glazed.magenta.name=Magenta Glazed Concrete
+tile.color.concrete.glazed.magenta.desc=Concrete baked and shaped, stained magenta.
+tile.color.concrete.glazed.orange.name=Orange Glazed Concrete
+tile.color.concrete.glazed.orange.desc=Concrete baked and shaped, stained orange.
+tile.color.concrete.glazed.white.name=White Glazed Concrete
+tile.color.concrete.glazed.white.desc=Concrete baked and shaped, stained white.
+
 
 tile.color.bed.black.name=Black Bed
 tile.color.bed.black.desc=Bed, but black!
@@ -131,7 +164,6 @@ tile.color.seat.orange.name=Orange Seat
 tile.color.seat.orange.desc=Sit down and relax, but orange.
 tile.color.seat.white.name=White Seat
 tile.color.seat.white.desc=Sit down and relax, but white.
-
 
 
 

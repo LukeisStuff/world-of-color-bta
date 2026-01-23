@@ -15,39 +15,37 @@ import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.util.ClientStartEntrypoint;
 import turniplabs.halplibe.util.GameStartEntrypoint;
 
-
 public class ColorMod implements ModInitializer, ClientStartEntrypoint, GameStartEntrypoint {
     public static final String MOD_ID = "color";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+
     @Override
     public void onInitialize() {
-		Biomes.OVERWORLD_RAINFOREST.getSpawnableList(MobCategory.creature).add(new SpawnListEntry(MobParrot.class, 102));
+        Biomes.OVERWORLD_RAINFOREST.getSpawnableList(MobCategory.creature).add(new SpawnListEntry(MobParrot.class, 102));
         LOGGER.info("World of Color initialized.");
     }
 
-	@Override
-	public void beforeGameStart() {
-		new ColorBlocks().initializeBlocks();
-		new ColorItems().initilizeItems();
-		new ColorEntities().initializeEntities();
-	}
+    @Override
+    public void beforeGameStart() {
+        ColorConfig.init();
+        ColorBlocks.init();
+        ColorItems.init();
+        ColorEntities.init();
+    }
 
-	@Override
-	public void afterGameStart() {
-		new ColorBlocks().initializeBlockDetails();
+    @Override
+    public void afterGameStart() {
+        MobInfoRegistry.register(MobParrot.class, "parrot.name", "parrot.desc", 10, 400,
+            new MobInfoRegistry.MobDrop[]{new MobInfoRegistry.MobDrop(new ItemStack(Items.FEATHER_CHICKEN), 1.0f, 2, 4)});
+    }
 
-		MobInfoRegistry.register(MobParrot.class, "parrot.name", "parrot.desc",
-			10, 400, new MobInfoRegistry.MobDrop[]{new MobInfoRegistry.MobDrop(new ItemStack(Items.FEATHER_CHICKEN),
-				1.0f, 2, 4)});
-	}
+    @Override
+    public void beforeClientStart() {
+        SoundRepository.registerNamespace(MOD_ID);
+    }
 
-	@Override
-	public void beforeClientStart() {
-		SoundRepository.registerNamespace(MOD_ID);
-	}
+    @Override
+    public void afterClientStart() {
 
-	@Override
-	public void afterClientStart() {
-
-	}
+    }
 }

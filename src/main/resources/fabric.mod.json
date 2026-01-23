@@ -2,7 +2,6 @@
   "schemaVersion": 1,
   "id": "color",
   "version": "${version}",
-
   "name": "World of Color",
   "description": "Remaking the 1.12 release update of minecraft in BTA!",
   "authors": [
@@ -12,38 +11,39 @@
     "homepage": "",
     "sources": ""
   },
-
-	"icon": "icon.png",
+  "icon": "icon.png",
   "license": "CC0-1.0",
-
   "environment": "*",
   "entrypoints": {
     "main": [
-			"luke.color.ColorMod"
+      "luke.color.ColorMod"
     ],
-		"beforeGameStart": [
-			"luke.color.ColorMod"
-		],
-		"beforeClientStart": [
-			"luke.color.ColorMod"
-		],
-		"initModels": [
-			"luke.color.ColorModels"
-		],
-		"afterGameStart": [
-			"luke.color.ColorMod"
-		],
-		"recipesReady": [
-			"luke.color.ColorRecipes"
-		]
-	},
+    "beforeGameStart": [
+      "luke.color.ColorMod"
+    ],
+    "beforeClientStart": [
+      "luke.color.ColorMod"
+    ],
+    "initModels": [
+      "luke.color.ColorModels"
+    ],
+    "afterGameStart": [
+      "luke.color.ColorMod"
+    ],
+    "recipesReady": [
+      "luke.color.ColorRecipes"
+    ]
+  },
   "mixins": [
     "color.mixins.json"
   ],
-
   "depends": {
-    "fabricloader": ">=0.15.5"
+    "fabricloader": ">=${fabricloader}",
+    "halplibe": ">=${halplibe}",
+    "minecraft": "*",
+    "java": ">=${java}"
   },
   "suggests": {
+    "modmenu": ">=${modmenu}"
   }
 }

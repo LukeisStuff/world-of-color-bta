@@ -1,323 +1,131 @@
 package luke.color;
 
+import luke.color.block.BlockLogicBedColored;
 import luke.color.block.BlockLogicConcrete;
+import luke.color.block.BlockLogicConcreteGlazed;
 import luke.color.block.BlockLogicPowder;
 import net.minecraft.core.block.Block;
-import net.minecraft.core.block.BlockLogicBed;
-import net.minecraft.core.block.BlockLogicSeat;
-import net.minecraft.core.block.Blocks;
-import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.tag.BlockTags;
-import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.block.ItemBlockPainted;
 import net.minecraft.core.sound.BlockSound;
-import net.minecraft.core.world.World;
 import turniplabs.halplibe.helper.BlockBuilder;
-import turniplabs.halplibe.helper.CreativeHelper;
 
+import static luke.color.ColorConfig.blockID;
 import static luke.color.ColorMod.MOD_ID;
-import static net.minecraft.core.player.inventory.menu.MenuInventoryCreative.creativeItems;
 
 public class ColorBlocks {
 
-	int blockID = 1200;
+    public static Block<?> CONCRETE;
 
-	public static Block<?> concrete;
+    public static Block<?> CONCRETE_POWDER;
 
-	public static Block<?> concretePowder;
+    public static Block<?> CONCRETE_GLAZED;
 
-	public static Block<?> bedWhite;
-	public static Block<?> bedOrange;
-	public static Block<?> bedMagenta;
-	public static Block<?> bedLightblue;
-	public static Block<?> bedYellow;
-	public static Block<?> bedLime;
-	public static Block<?> bedPink;
-	public static Block<?> bedGray;
-	public static Block<?> bedSilver;
-	public static Block<?> bedCyan;
-	public static Block<?> bedPurple;
-	public static Block<?> bedBlue;
-	public static Block<?> bedBrown;
-	public static Block<?> bedGreen;
-	public static Block<?> bedBlack;
+    public static Block<?> BED_WHITE;
+    public static Block<?> BED_ORANGE;
+    public static Block<?> BED_MAGENTA;
+    public static Block<?> BED_LIGHTBLUE;
+    public static Block<?> BED_YELLOW;
+    public static Block<?> BED_LIME;
+    public static Block<?> BED_PINK;
+    public static Block<?> BED_GRAY;
+    public static Block<?> BED_SILVER;
+    public static Block<?> BED_CYAN;
+    public static Block<?> BED_PURPLE;
+    public static Block<?> BED_BLUE;
+    public static Block<?> BED_BROWN;
+    public static Block<?> BED_GREEN;
+    public static Block<?> BED_BLACK;
 
-	public static Block<?> seatWhite;
-	public static Block<?> seatOrange;
-	public static Block<?> seatMagenta;
-	public static Block<?> seatLightblue;
-	public static Block<?> seatYellow;
-	public static Block<?> seatLime;
-	public static Block<?> seatPink;
-	public static Block<?> seatGray;
-	public static Block<?> seatSilver;
-	public static Block<?> seatCyan;
-	public static Block<?> seatPurple;
-	public static Block<?> seatBlue;
-	public static Block<?> seatBrown;
-	public static Block<?> seatGreen;
-	public static Block<?> seatBlack;
+    public static Block<?> SEAT_WHITE;
+    public static Block<?> SEAT_ORANGE;
+    public static Block<?> SEAT_MAGENTA;
+    public static Block<?> SEAT_LIGHTBLUE;
+    public static Block<?> SEAT_YELLOW;
+    public static Block<?> SEAT_LIME;
+    public static Block<?> SEAT_PINK;
+    public static Block<?> SEAT_GRAY;
+    public static Block<?> SEAT_SILVER;
+    public static Block<?> SEAT_CYAN;
+    public static Block<?> SEAT_PURPLE;
+    public static Block<?> SEAT_BLUE;
+    public static Block<?> SEAT_BROWN;
+    public static Block<?> SEAT_GREEN;
+    public static Block<?> SEAT_BLACK;
 
+    private static boolean hasInit = false;
 
-	public void initializeBlockDetails() {
+    public static void init() {
+        if (!hasInit) {
+            hasInit = true;
+            initializeBlocks();
+        }
+    }
 
-		int i;
-		int j;
-		for(i = 0; i < Blocks.blocksList.length; ++i) {
-			if (i != ColorBlocks.concrete.id()) {
-					for(j = 1; j < 16; ++j) {
-						creativeItems.add(new ItemStack(ColorBlocks.concrete.id(), 1, j));
-					}
-				}
-			}
+    public static void initializeBlocks() {
 
+        CONCRETE = new BlockBuilder(MOD_ID)
+            .setHardness(5.0f)
+            .setResistance(25.0f)
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+            .setBlockItem(block -> new ItemBlockPainted<>(block, false))
+            .build("concrete", "concrete", blockID("CONCRETE"), BlockLogicConcrete::new);
 
-		for (int color = 1; color < 17; color++) {
-			CreativeHelper.setParent(concrete, color - 1, concretePowder, 0);
-		}
-	}
+        CONCRETE_POWDER = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.sand", "step.sand", 1.0f, 0.8f))
+            .setHardness(0.5f)
+            .setResistance(0.5f)
+            .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.NOT_IN_CREATIVE_MENU)
+            .setBlockItem(block -> new ItemBlockPainted<>(block, false))
+            .build("concrete.powder", "concrete_powder", blockID("CONCRETE_POWDER"), BlockLogicPowder::new);
 
-	public void initializeBlocks() {
-
-		BlockBuilder powder = new BlockBuilder(MOD_ID)
-			.setBlockSound(new BlockSound("step.sand", "step.sand", 1.0f, 0.8f))
-			.setHardness(0.5f)
-			.setResistance(0.5f)
-			.setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.NOT_IN_CREATIVE_MENU);
-
-		BlockBuilder bed = new BlockBuilder(MOD_ID)
-			.setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
-			.setHardness(0.2f)
-			.setResistance(1.0f)
-			.setUseInternalLight()
-			.setVisualUpdateOnMetadata()
-			.setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU);
-
-		concrete = new BlockBuilder(MOD_ID)
-			.setHardness(5.0f)
-			.setResistance(25.0f)
-			.setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
-			.setBlockItem(block -> new ItemBlockPainted<>(block, false))
-			.build("concrete", "block/concrete", blockID++, b -> new BlockLogicConcrete(b));
-
-		concretePowder = powder
-			.setBlockItem(block -> new ItemBlockPainted<>(block, false))
-			.build("concrete.powder", "block/concrete_powder", blockID++, b -> new BlockLogicPowder(b));
+        CONCRETE_GLAZED = new BlockBuilder(MOD_ID)
+            .setHardness(5.0f)
+            .setResistance(25.0f)
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU)
+            .setBlockItem(block -> new ItemBlockPainted<>(block, true))
+            .build("concrete.glazed", "concrete_glazed", blockID("CONCRETE_GLAZED"), BlockLogicConcreteGlazed::new);
 
 
-		bedOrange = bed
-			.build("bed.orange","bed_orange", blockID++, b -> new BlockLogicBed(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.bedOrange)};
-				}
-		});
+        BlockBuilder bedBuilder = new BlockBuilder(MOD_ID)
+            .setBlockSound(new BlockSound("step.wood", "step.wood", 1.0f, 1.0f))
+            .setHardness(0.2f)
+            .setResistance(1.0f)
+            .setUseInternalLight()
+            .setVisualUpdateOnMetadata()
+            .setTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU);
 
-		bedYellow = bed
-			.build("bed.yellow","bed_yellow", blockID++, b -> new BlockLogicBed(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.bedYellow)};
-				}
-			});
+        BED_WHITE = bedBuilder.build("bed.white", "bed_white", blockID("BED_WHITE"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.BED_WHITE)));
+        BED_ORANGE = bedBuilder.build("bed.orange", "bed_orange", blockID("BED_ORANGE"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.BED_ORANGE)));
+        BED_MAGENTA = bedBuilder.build("bed.magenta", "bed_magenta", blockID("BED_MAGENTA"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.BED_MAGENTA)));
+        BED_LIGHTBLUE = bedBuilder.build("bed.lightblue", "bed_lightblue", blockID("BED_LIGHTBLUE"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.BED_LIGHTBLUE)));
+        BED_YELLOW = bedBuilder.build("bed.yellow", "bed_yellow", blockID("BED_YELLOW"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.BED_YELLOW)));
+        BED_LIME = bedBuilder.build("bed.lime", "bed_lime", blockID("BED_LIME"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.BED_LIME)));
+        BED_PINK = bedBuilder.build("bed.pink", "bed_pink", blockID("BED_PINK"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.BED_PINK)));
+        BED_GRAY = bedBuilder.build("bed.gray", "bed_gray", blockID("BED_GRAY"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.BED_GRAY)));
+        BED_SILVER = bedBuilder.build("bed.silver", "bed_silver", blockID("BED_SILVER"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.BED_SILVER)));
+        BED_CYAN = bedBuilder.build("bed.cyan", "bed_cyan", blockID("BED_CYAN"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.BED_CYAN)));
+        BED_PURPLE = bedBuilder.build("bed.purple", "bed_purple", blockID("BED_PURPLE"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.BED_PURPLE)));
+        BED_BLUE = bedBuilder.build("bed.blue", "bed_blue", blockID("BED_BLUE"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.BED_BLUE)));
+        BED_BROWN = bedBuilder.build("bed.brown", "bed_brown", blockID("BED_BROWN"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.BED_BROWN)));
+        BED_GREEN = bedBuilder.build("bed.green", "bed_green", blockID("BED_GREEN"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.BED_GREEN)));
+        BED_BLACK = bedBuilder.build("bed.black", "bed_black", blockID("BED_BLACK"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.BED_BLACK)));
 
-		bedLime = bed
-			.build("bed.lime","bed_lime", blockID++, b -> new BlockLogicBed(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.bedLime)};
-				}
-			});
-
-		bedGreen = bed
-			.build("bed.green","bed_green", blockID++, b -> new BlockLogicBed(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.bedGreen)};
-				}
-			});
-
-		bedCyan = bed
-			.build("bed.cyan","bed_cyan", blockID++, b -> new BlockLogicBed(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.bedCyan)};
-				}
-			});
-
-		bedLightblue = bed
-			.build("bed.lightblue","bed_lightblue", blockID++, b -> new BlockLogicBed(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.bedLightblue)};
-				}
-			});
-
-		bedBlue = bed
-			.build("bed.blue","bed_blue", blockID++, b -> new BlockLogicBed(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.bedBlue)};
-				}
-			});
-
-		bedPurple = bed
-			.build("bed.purple","bed_purple", blockID++, b -> new BlockLogicBed(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.bedPurple)};
-				}
-			});
-
-		bedMagenta = bed
-			.build("bed.magenta","bed_magenta", blockID++, b -> new BlockLogicBed(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.bedMagenta)};
-				}
-			});
-
-		bedPink = bed
-			.build("bed.pink","bed_pink", blockID++, b -> new BlockLogicBed(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.bedPink)};
-				}
-			});
-
-		bedBrown = bed
-			.build("bed.brown","bed_brown", blockID++, b -> new BlockLogicBed(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.bedBrown)};
-				}
-			});
-
-		bedWhite = bed
-			.build("bed.white","bed_white", blockID++, b -> new BlockLogicBed(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.bedWhite)};
-				}
-			});
-
-		bedSilver = bed
-			.build("bed.silver","bed_silver", blockID++, b -> new BlockLogicBed(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.bedSilver)};
-				}
-			});
-
-		bedGray = bed
-			.build("bed.gray","bed_gray", blockID++, b -> new BlockLogicBed(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.bedGray)};
-				}
-			});
-
-		bedBlack = bed
-			.build("bed.black","bed_black", blockID++, b -> new BlockLogicBed(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.bedBlack)};
-				}
-			});
-
-
-
-		seatOrange = bed
-			.build("seat.orange","seat_orange", blockID++, b -> new BlockLogicSeat(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.seatOrange)};
-				}
-			});
-
-		seatYellow = bed
-			.build("seat.yellow","seat_yellow", blockID++, b -> new BlockLogicSeat(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.seatYellow)};
-				}
-			});
-
-		seatLime = bed
-			.build("seat.lime","seat_lime", blockID++, b -> new BlockLogicSeat(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.seatLime)};
-				}
-			});
-
-		seatGreen = bed
-			.build("seat.green","seat_green", blockID++, b -> new BlockLogicSeat(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.seatGreen)};
-				}
-			});
-
-		seatCyan = bed
-			.build("seat.cyan","seat_cyan", blockID++, b -> new BlockLogicSeat(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.seatCyan)};
-				}
-			});
-
-		seatLightblue = bed
-			.build("seat.lightblue","seat_lightblue", blockID++, b -> new BlockLogicSeat(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.seatLightblue)};
-				}
-			});
-
-		seatBlue = bed
-			.build("seat.blue","seat_blue", blockID++, b -> new BlockLogicSeat(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.seatBlue)};
-				}
-			});
-
-		seatPurple = bed
-			.build("seat.purple","seat_purple", blockID++, b -> new BlockLogicSeat(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.seatPurple)};
-				}
-			});
-
-		seatMagenta = bed
-			.build("seat.magenta","seat_magenta", blockID++, b -> new BlockLogicSeat(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.seatMagenta)};
-				}
-			});
-
-		seatPink = bed
-			.build("seat.pink","seat_pink", blockID++, b -> new BlockLogicSeat(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.seatPink)};
-				}
-			});
-
-		seatBrown = bed
-			.build("seat.brown","seat_brown", blockID++, b -> new BlockLogicSeat(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.seatBrown)};
-				}
-			});
-
-		seatWhite = bed
-			.build("seat.white","seat_white", blockID++, b -> new BlockLogicSeat(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.seatWhite)};
-				}
-			});
-
-		seatSilver = bed
-			.build("seat.silver","seat_silver", blockID++, b -> new BlockLogicSeat(b) {
-					public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-						return new ItemStack[]{new ItemStack(ColorItems.seatSilver)};
-					}
-				});
-
-		seatGray = bed
-			.build("seat.gray","seat_gray", blockID++, b -> new BlockLogicSeat(b) {
-					public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-						return new ItemStack[]{new ItemStack(ColorItems.seatGray)};
-					}
-				});
-
-		seatBlack = bed
-			.build("seat.black","seat_black", blockID++, b -> new BlockLogicSeat(b) {
-				public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-					return new ItemStack[]{new ItemStack(ColorItems.seatBlack)};
-				}
-			});
-
-	}
-
+        SEAT_WHITE = bedBuilder.build("seat.white", "seat_white", blockID("SEAT_WHITE"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_WHITE)));
+        SEAT_ORANGE = bedBuilder.build("seat.orange", "seat_orange", blockID("SEAT_ORANGE"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_ORANGE)));
+        SEAT_MAGENTA = bedBuilder.build("seat.magenta", "seat_magenta", blockID("SEAT_MAGENTA"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_MAGENTA)));
+        SEAT_LIGHTBLUE = bedBuilder.build("seat.lightblue", "seat_lightblue", blockID("SEAT_LIGHTBLUE"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_LIGHTBLUE)));
+        SEAT_YELLOW = bedBuilder.build("seat.yellow", "seat_yellow", blockID("SEAT_YELLOW"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_YELLOW)));
+        SEAT_LIME = bedBuilder.build("seat.lime", "seat_lime", blockID("SEAT_LIME"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_LIME)));
+        SEAT_PINK = bedBuilder.build("seat.pink", "seat_pink", blockID("SEAT_PINK"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_PINK)));
+        SEAT_GRAY = bedBuilder.build("seat.gray", "seat_gray", blockID("SEAT_GRAY"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_GRAY)));
+        SEAT_SILVER = bedBuilder.build("seat.silver", "seat_silver", blockID("SEAT_SILVER"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_SILVER)));
+        SEAT_CYAN = bedBuilder.build("seat.cyan", "seat_cyan", blockID("SEAT_CYAN"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_CYAN)));
+        SEAT_PURPLE = bedBuilder.build("seat.purple", "seat_purple", blockID("SEAT_PURPLE"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_PURPLE)));
+        SEAT_BLUE = bedBuilder.build("seat.blue", "seat_blue", blockID("SEAT_BLUE"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_BLUE)));
+        SEAT_BROWN = bedBuilder.build("seat.brown", "seat_brown", blockID("SEAT_BROWN"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_BROWN)));
+        SEAT_GREEN = bedBuilder.build("seat.green", "seat_green", blockID("SEAT_GREEN"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_GREEN)));
+        SEAT_BLACK = bedBuilder.build("seat.black", "seat_black", blockID("SEAT_BLACK"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_BLACK)));
+    }
 }
