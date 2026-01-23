@@ -37,6 +37,7 @@ public class ColorMod implements ModInitializer, ClientStartEntrypoint, GameStar
 
     @Override
     public void afterGameStart() {
+        Items.BED.setMaxStackSize(64);
     }
 
     @Override

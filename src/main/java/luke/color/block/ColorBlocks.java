@@ -66,7 +66,7 @@ public class ColorBlocks {
             .setResistance(25.0f)
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .setBlockItem(block -> new ItemBlockPainted<>(block, false))
-            .build("concrete", "concrete", blockID("CONCRETE"), BlockLogicConcrete::new);
+            .build("concrete", "concrete", blockID("CONCRETE"), block -> new BlockLogicConcrete(block, () -> CONCRETE_POWDER));
 
         CONCRETE_POWDER = new BlockBuilder(MOD_ID)
             .setBlockSound(new BlockSound("step.sand", "step.sand", 1.0f, 0.8f))
