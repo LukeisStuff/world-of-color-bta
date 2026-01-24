@@ -7,11 +7,8 @@ import luke.color.item.ColorItems;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.gui.guidebook.mobs.MobInfoRegistry;
 import net.minecraft.client.sound.SoundRepository;
-import net.minecraft.core.entity.SpawnListEntry;
-import net.minecraft.core.enums.MobCategory;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.Items;
-import net.minecraft.core.world.biome.Biomes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.util.ClientStartEntrypoint;
@@ -23,7 +20,6 @@ public class ColorMod implements ModInitializer, ClientStartEntrypoint, GameStar
 
     @Override
     public void onInitialize() {
-        Biomes.OVERWORLD_RAINFOREST.getSpawnableList(MobCategory.creature).add(new SpawnListEntry(MobParrot.class, 102));
         LOGGER.info("World of Color initialized.");
     }
 

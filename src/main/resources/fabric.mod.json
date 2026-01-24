@@ -18,6 +18,9 @@
     "main": [
       "luke.color.ColorMod"
     ],
+    "onInitialize": [
+      "luke.color.ColorMod"
+    ],
     "beforeGameStart": [
       "luke.color.ColorMod"
     ],
