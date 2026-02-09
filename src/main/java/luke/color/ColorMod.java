@@ -9,6 +9,7 @@ import net.minecraft.client.gui.guidebook.mobs.MobInfoRegistry;
 import net.minecraft.client.sound.SoundRepository;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.Items;
+import net.minecraft.core.sound.SoundTypes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.util.ClientStartEntrypoint;
@@ -29,6 +30,7 @@ public class ColorMod implements ModInitializer, ClientStartEntrypoint, GameStar
         ColorBlocks.init();
         ColorItems.init();
         ColorEntities.init();
+        SoundTypes.loadSoundsJson(MOD_ID);
     }
 
     @Override

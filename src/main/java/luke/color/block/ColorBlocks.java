@@ -108,20 +108,20 @@ public class ColorBlocks {
         BED_GREEN = bedBuilder.build("bed.green", "bed_green", blockID("BED_GREEN"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.BED_GREEN)));
         BED_BLACK = bedBuilder.build("bed.black", "bed_black", blockID("BED_BLACK"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.BED_BLACK)));
 
-        SEAT_WHITE = bedBuilder.build("seat.white", "seat_white", blockID("SEAT_WHITE"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_WHITE)));
-        SEAT_ORANGE = bedBuilder.build("seat.orange", "seat_orange", blockID("SEAT_ORANGE"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_ORANGE)));
-        SEAT_MAGENTA = bedBuilder.build("seat.magenta", "seat_magenta", blockID("SEAT_MAGENTA"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_MAGENTA)));
-        SEAT_LIGHTBLUE = bedBuilder.build("seat.lightblue", "seat_lightblue", blockID("SEAT_LIGHTBLUE"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_LIGHTBLUE)));
-        SEAT_YELLOW = bedBuilder.build("seat.yellow", "seat_yellow", blockID("SEAT_YELLOW"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_YELLOW)));
-        SEAT_LIME = bedBuilder.build("seat.lime", "seat_lime", blockID("SEAT_LIME"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_LIME)));
-        SEAT_PINK = bedBuilder.build("seat.pink", "seat_pink", blockID("SEAT_PINK"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_PINK)));
-        SEAT_GRAY = bedBuilder.build("seat.gray", "seat_gray", blockID("SEAT_GRAY"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_GRAY)));
-        SEAT_SILVER = bedBuilder.build("seat.silver", "seat_silver", blockID("SEAT_SILVER"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_SILVER)));
-        SEAT_CYAN = bedBuilder.build("seat.cyan", "seat_cyan", blockID("SEAT_CYAN"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_CYAN)));
-        SEAT_PURPLE = bedBuilder.build("seat.purple", "seat_purple", blockID("SEAT_PURPLE"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_PURPLE)));
-        SEAT_BLUE = bedBuilder.build("seat.blue", "seat_blue", blockID("SEAT_BLUE"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_BLUE)));
-        SEAT_BROWN = bedBuilder.build("seat.brown", "seat_brown", blockID("SEAT_BROWN"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_BROWN)));
-        SEAT_GREEN = bedBuilder.build("seat.green", "seat_green", blockID("SEAT_GREEN"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_GREEN)));
-        SEAT_BLACK = bedBuilder.build("seat.black", "seat_black", blockID("SEAT_BLACK"), b -> new BlockLogicBedColored(b, new ItemStack(ColorItems.SEAT_BLACK)));
+        SEAT_WHITE = bedBuilder.build("seat.white", "seat_white", blockID("SEAT_WHITE"), b -> new BlockLogicSeatColored(b, new ItemStack(ColorItems.SEAT_WHITE)));
+        SEAT_ORANGE = bedBuilder.build("seat.orange", "seat_orange", blockID("SEAT_ORANGE"), b -> new BlockLogicSeatColored(b, new ItemStack(ColorItems.SEAT_ORANGE)));
+        SEAT_MAGENTA = bedBuilder.build("seat.magenta", "seat_magenta", blockID("SEAT_MAGENTA"), b -> new BlockLogicSeatColored(b, new ItemStack(ColorItems.SEAT_MAGENTA)));
+        SEAT_LIGHTBLUE = bedBuilder.build("seat.lightblue", "seat_lightblue", blockID("SEAT_LIGHTBLUE"), b -> new BlockLogicSeatColored(b, new ItemStack(ColorItems.SEAT_LIGHTBLUE)));
+        SEAT_YELLOW = bedBuilder.build("seat.yellow", "seat_yellow", blockID("SEAT_YELLOW"), b -> new BlockLogicSeatColored(b, new ItemStack(ColorItems.SEAT_YELLOW)));
+        SEAT_LIME = bedBuilder.build("seat.lime", "seat_lime", blockID("SEAT_LIME"), b -> new BlockLogicSeatColored(b, new ItemStack(ColorItems.SEAT_LIME)));
+        SEAT_PINK = bedBuilder.build("seat.pink", "seat_pink", blockID("SEAT_PINK"), b -> new BlockLogicSeatColored(b, new ItemStack(ColorItems.SEAT_PINK)));
+        SEAT_GRAY = bedBuilder.build("seat.gray", "seat_gray", blockID("SEAT_GRAY"), b -> new BlockLogicSeatColored(b, new ItemStack(ColorItems.SEAT_GRAY)));
+        SEAT_SILVER = bedBuilder.build("seat.silver", "seat_silver", blockID("SEAT_SILVER"), b -> new BlockLogicSeatColored(b, new ItemStack(ColorItems.SEAT_SILVER)));
+        SEAT_CYAN = bedBuilder.build("seat.cyan", "seat_cyan", blockID("SEAT_CYAN"), b -> new BlockLogicSeatColored(b, new ItemStack(ColorItems.SEAT_CYAN)));
+        SEAT_PURPLE = bedBuilder.build("seat.purple", "seat_purple", blockID("SEAT_PURPLE"), b -> new BlockLogicSeatColored(b, new ItemStack(ColorItems.SEAT_PURPLE)));
+        SEAT_BLUE = bedBuilder.build("seat.blue", "seat_blue", blockID("SEAT_BLUE"), b -> new BlockLogicSeatColored(b, new ItemStack(ColorItems.SEAT_BLUE)));
+        SEAT_BROWN = bedBuilder.build("seat.brown", "seat_brown", blockID("SEAT_BROWN"), b -> new BlockLogicSeatColored(b, new ItemStack(ColorItems.SEAT_BROWN)));
+        SEAT_GREEN = bedBuilder.build("seat.green", "seat_green", blockID("SEAT_GREEN"), b -> new BlockLogicSeatColored(b, new ItemStack(ColorItems.SEAT_GREEN)));
+        SEAT_BLACK = bedBuilder.build("seat.black", "seat_black", blockID("SEAT_BLACK"), b -> new BlockLogicSeatColored(b, new ItemStack(ColorItems.SEAT_BLACK)));
     }
 }
